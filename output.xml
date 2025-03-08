@@ -1,79 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.1 on darwin)" generated="2025-03-08T22:31:02.209028" rpa="false" schemaversion="5">
-<suite id="s1" name="Valid" source="/Users/angela/Downloads/robotcache/valid.robot">
-<test id="s1-t1" name="Valid Login" line="9">
-<kw name="Open Browser To Login Page">
+<robot generator="Robot 7.2.2 (Python 3.13.1 on darwin)" generated="2025-03-09T00:28:20.654470" rpa="false" schemaversion="5">
+<suite id="s1" name="Checkrobot" source="/Users/angela/Downloads/robotcache/Checkrobot.robot">
+<test id="s1-t1" name="測試右下角物件點擊後的文字" line="11">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-03-08T22:31:02.285807" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5500/demoapp/html/index.html'.</msg>
-<arg>${Login-Url}</arg>
-<arg>${Browser}</arg>
+<msg time="2025-03-09T00:28:20.702893" level="INFO">Opening browser 'Chrome' to base url 'https://www.bitopro.com/ns/home'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-03-08T22:31:02.285710" elapsed="0.933812"/>
+<status status="PASS" start="2025-03-09T00:28:20.702784" elapsed="1.809227"/>
 </kw>
-<kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2025-03-08T22:31:03.225976" level="INFO">Page title is 'Login Page'.</msg>
-<arg>Login Page</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2025-03-08T22:31:03.220395" elapsed="0.005712"/>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-09T00:28:22.512448" elapsed="0.368219"/>
 </kw>
-<status status="PASS" start="2025-03-08T22:31:02.285434" elapsed="0.941026"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-09T00:28:27.883724" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-09T00:28:22.880870" elapsed="5.003118"/>
 </kw>
-<kw name="Type In Username">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-03-08T22:31:03.228932" level="INFO">Typing text 'demo' into text field 'id=username_field'.</msg>
-<arg>id=username_field</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-08T22:31:03.228167" elapsed="0.106334"/>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T00:28:38.242684" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-03-09T00:28:38.242816" level="FAIL">Element '//button[contains(@class, 'ssc-1k07fow-1 cbnSms')]' not visible after 10 seconds.</msg>
+<arg>${XPATH_BUTTON}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-03-09T00:28:27.884429" elapsed="10.359245">Element '//button[contains(@class, 'ssc-1k07fow-1 cbnSms')]' not visible after 10 seconds.</status>
 </kw>
-<arg>demo</arg>
-<status status="PASS" start="2025-03-08T22:31:03.226998" elapsed="0.107608"/>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${XPATH_BUTTON}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="NOT RUN" start="2025-03-09T00:28:38.243811" elapsed="0.000018"/>
 </kw>
-<kw name="Type In Password">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-03-08T22:31:03.335183" level="INFO">Typing text 'mode' into text field 'id=password_field'.</msg>
-<arg>id=password_field</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-08T22:31:03.335080" elapsed="0.024221"/>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-03-09T00:28:38.243897" elapsed="0.000014"/>
 </kw>
-<arg>mode</arg>
-<status status="PASS" start="2025-03-08T22:31:03.334918" elapsed="0.024444"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${XPATH_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-03-09T00:28:38.243971" elapsed="0.000011"/>
 </kw>
-<kw name="Submit Credentials">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-03-08T22:31:03.360250" level="INFO">Clicking button 'id=login_button'.</msg>
-<arg>id=login_button</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-08T22:31:03.359925" elapsed="0.036422"/>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-03-09T00:28:38.244021" elapsed="0.000010"/>
 </kw>
-<status status="PASS" start="2025-03-08T22:31:03.359480" elapsed="0.036945"/>
+<kw name="Get Page Source">
+<var>${page_source}</var>
+<status status="NOT RUN" start="2025-03-09T00:28:38.244126" elapsed="0.000011"/>
 </kw>
-<kw name="Welcome Page Should Be Open">
-<kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2025-03-08T22:31:03.401159" level="INFO">Page title is 'Welcome Page'.</msg>
-<arg>Welcome Page</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2025-03-08T22:31:03.396679" elapsed="0.004508"/>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${page_source}</arg>
+<arg>${EXPECTED_TEXT}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-03-09T00:28:38.244199" elapsed="0.000011"/>
 </kw>
-<status status="PASS" start="2025-03-08T22:31:03.396553" elapsed="0.004664"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-03-08T22:31:03.401797" elapsed="0.072082"/>
+<status status="NOT RUN" start="2025-03-09T00:28:38.244256" elapsed="0.000009"/>
 </kw>
-<status status="PASS" start="2025-03-08T22:31:02.285174" elapsed="1.188816"/>
+<status status="FAIL" start="2025-03-09T00:28:20.701994" elapsed="17.542373">Element '//button[contains(@class, 'ssc-1k07fow-1 cbnSms')]' not visible after 10 seconds.</status>
 </test>
-<status status="PASS" start="2025-03-08T22:31:02.209637" elapsed="1.264670"/>
+<status status="FAIL" start="2025-03-09T00:28:20.655180" elapsed="17.589386"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Valid" id="s1" pass="1" fail="0" skip="0">Valid</stat>
+<stat name="Checkrobot" id="s1" pass="0" fail="1" skip="0">Checkrobot</stat>
 </suite>
 </statistics>
 <errors>
