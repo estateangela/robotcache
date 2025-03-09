@@ -1,78 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.1 on darwin)" generated="2025-03-09T00:28:20.654470" rpa="false" schemaversion="5">
-<suite id="s1" name="Checkrobot" source="/Users/angela/Downloads/robotcache/Checkrobot.robot">
-<test id="s1-t1" name="測試右下角物件點擊後的文字" line="11">
+<robot generator="Robot 7.2.2 (Python 3.13.1 on darwin)" generated="2025-03-09T19:37:33.103240" rpa="false" schemaversion="5">
+<suite id="s1" name="Click Test" source="/Users/angela/Downloads/robotcache/click_test.robot">
+<test id="s1-t1" name="Page Navigator" line="12">
+<kw name="Open Browser To HomePage">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-03-09T00:28:20.702893" level="INFO">Opening browser 'Chrome' to base url 'https://www.bitopro.com/ns/home'.</msg>
-<arg>${URL}</arg>
+<msg time="2025-03-09T19:37:33.151594" level="INFO">Opening browser 'chrome' to base url 'https://www.bitopro.com/ns/home'.</msg>
+<arg>${Url}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-03-09T00:28:20.702784" elapsed="1.809227"/>
+<status status="PASS" start="2025-03-09T19:37:33.151503" elapsed="1.866064"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-03-09T00:28:22.512448" elapsed="0.368219"/>
+<status status="PASS" start="2025-03-09T19:37:33.151243" elapsed="1.866584"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-09T00:28:27.883724" level="INFO">Slept 5 seconds.</msg>
-<arg>5s</arg>
+<msg time="2025-03-09T19:37:38.018961" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-09T00:28:22.880870" elapsed="5.003118"/>
+<status status="PASS" start="2025-03-09T19:37:35.018076" elapsed="3.001240"/>
 </kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<msg time="2025-03-09T00:28:38.242684" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-03-09T00:28:38.242816" level="FAIL">Element '//button[contains(@class, 'ssc-1k07fow-1 cbnSms')]' not visible after 10 seconds.</msg>
-<arg>${XPATH_BUTTON}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="FAIL" start="2025-03-09T00:28:27.884429" elapsed="10.359245">Element '//button[contains(@class, 'ssc-1k07fow-1 cbnSms')]' not visible after 10 seconds.</status>
-</kw>
-<kw name="Scroll Element Into View" owner="SeleniumLibrary">
-<arg>${XPATH_BUTTON}</arg>
-<doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="NOT RUN" start="2025-03-09T00:28:38.243811" elapsed="0.000018"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-03-09T00:28:38.243897" elapsed="0.000014"/>
-</kw>
+<kw name="Click Login">
 <kw name="Click Element" owner="SeleniumLibrary">
-<arg>${XPATH_BUTTON}</arg>
+<msg time="2025-03-09T19:37:38.022116" level="INFO">Clicking element '//a[contains(text(), '登入')]'.</msg>
+<arg>${LOGIN_LINK}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-03-09T00:28:38.243971" elapsed="0.000011"/>
+<status status="PASS" start="2025-03-09T19:37:38.021106" elapsed="1.257787"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-03-09T00:28:38.244021" elapsed="0.000010"/>
+<status status="PASS" start="2025-03-09T19:37:38.020202" elapsed="1.258774"/>
 </kw>
-<kw name="Get Page Source">
-<var>${page_source}</var>
-<status status="NOT RUN" start="2025-03-09T00:28:38.244126" elapsed="0.000011"/>
+<kw name="Login Page Should Be Open">
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-03-09T19:37:39.282689" level="INFO">Current location is 'https://www.bitopro.com/users/sign_in'.</msg>
+<arg>${Location}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-03-09T19:37:39.279282" elapsed="0.003477"/>
 </kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${page_source}</arg>
-<arg>${EXPECTED_TEXT}</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="NOT RUN" start="2025-03-09T00:28:38.244199" elapsed="0.000011"/>
+<status status="PASS" start="2025-03-09T19:37:39.279130" elapsed="0.003695"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="NOT RUN" start="2025-03-09T00:28:38.244256" elapsed="0.000009"/>
+<status status="PASS" start="2025-03-09T19:37:39.282928" elapsed="0.082725"/>
 </kw>
-<status status="FAIL" start="2025-03-09T00:28:20.701994" elapsed="17.542373">Element '//button[contains(@class, 'ssc-1k07fow-1 cbnSms')]' not visible after 10 seconds.</status>
+<status status="PASS" start="2025-03-09T19:37:33.151000" elapsed="6.214815"/>
 </test>
-<status status="FAIL" start="2025-03-09T00:28:20.655180" elapsed="17.589386"/>
+<status status="PASS" start="2025-03-09T19:37:33.103726" elapsed="6.262303"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Checkrobot" id="s1" pass="0" fail="1" skip="0">Checkrobot</stat>
+<stat name="Click Test" id="s1" pass="1" fail="0" skip="0">Click Test</stat>
 </suite>
 </statistics>
 <errors>
