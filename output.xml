@@ -1,48 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.1 on darwin)" generated="2025-03-09T19:37:33.103240" rpa="false" schemaversion="5">
-<suite id="s1" name="Click Test" source="/Users/angela/Downloads/robotcache/click_test.robot">
-<test id="s1-t1" name="Page Navigator" line="12">
+<robot generator="Robot 7.2.2 (Python 3.9.6 on darwin)" generated="2025-03-10T10:50:48.631275" rpa="false" schemaversion="5">
+<suite id="s1" name="LoginButton" source="/Users/angelashi/Documents/GitHub/robotcache/LoginButton.robot">
+<test id="s1-t1" name="Page Navigator" line="13">
 <kw name="Open Browser To HomePage">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-03-09T19:37:33.151594" level="INFO">Opening browser 'chrome' to base url 'https://www.bitopro.com/ns/home'.</msg>
+<msg time="2025-03-10T10:50:48.745467" level="INFO">Opening browser 'safari' to base url 'https://www.bitopro.com/ns/home'.</msg>
 <arg>${Url}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-03-09T19:37:33.151503" elapsed="1.866064"/>
+<status status="PASS" start="2025-03-10T10:50:48.744979" elapsed="2.483208"/>
 </kw>
-<status status="PASS" start="2025-03-09T19:37:33.151243" elapsed="1.866584"/>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-03-10T10:50:51.228858" elapsed="0.002647"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-09T19:37:38.018961" level="INFO">Slept 3 seconds.</msg>
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-09T19:37:35.018076" elapsed="3.001240"/>
+<status status="PASS" start="2025-03-10T10:50:48.744526" elapsed="2.487196"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-10T10:50:51.232080" elapsed="0.021407"/>
 </kw>
 <kw name="Click Login">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-09T19:37:38.022116" level="INFO">Clicking element '//a[contains(text(), '登入')]'.</msg>
+<msg time="2025-03-10T10:50:51.254207" level="INFO">Clicking element '//a[contains(text(), '登入')]'.</msg>
 <arg>${LOGIN_LINK}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-09T19:37:38.021106" elapsed="1.257787"/>
+<status status="PASS" start="2025-03-10T10:50:51.253958" elapsed="5.255460"/>
 </kw>
-<status status="PASS" start="2025-03-09T19:37:38.020202" elapsed="1.258774"/>
+<status status="PASS" start="2025-03-10T10:50:51.253742" elapsed="5.255956"/>
 </kw>
 <kw name="Login Page Should Be Open">
 <kw name="Location Should Be" owner="SeleniumLibrary">
-<msg time="2025-03-09T19:37:39.282689" level="INFO">Current location is 'https://www.bitopro.com/users/sign_in'.</msg>
+<msg time="2025-03-10T10:50:56.516492" level="INFO">Current location is 'https://www.bitopro.com/users/sign_in'.</msg>
 <arg>${Location}</arg>
 <doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="PASS" start="2025-03-09T19:37:39.279282" elapsed="0.003477"/>
+<status status="PASS" start="2025-03-10T10:50:56.510837" elapsed="0.005953"/>
 </kw>
-<status status="PASS" start="2025-03-09T19:37:39.279130" elapsed="0.003695"/>
+<status status="PASS" start="2025-03-10T10:50:56.510198" elapsed="0.006823"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-03-09T19:37:39.282928" elapsed="0.082725"/>
+<status status="PASS" start="2025-03-10T10:50:56.517666" elapsed="0.222748"/>
 </kw>
-<status status="PASS" start="2025-03-09T19:37:33.151000" elapsed="6.214815"/>
+<status status="PASS" start="2025-03-10T10:50:48.744126" elapsed="7.996540"/>
 </test>
-<status status="PASS" start="2025-03-09T19:37:33.103726" elapsed="6.262303"/>
+<status status="PASS" start="2025-03-10T10:50:48.633078" elapsed="8.108220"/>
 </suite>
 <statistics>
 <total>
@@ -51,7 +54,7 @@
 <tag>
 </tag>
 <suite>
-<stat name="Click Test" id="s1" pass="1" fail="0" skip="0">Click Test</stat>
+<stat name="LoginButton" id="s1" pass="1" fail="0" skip="0">LoginButton</stat>
 </suite>
 </statistics>
 <errors>
