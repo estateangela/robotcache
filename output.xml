@@ -1,51 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.9.6 on darwin)" generated="2025-03-10T10:50:48.631275" rpa="false" schemaversion="5">
-<suite id="s1" name="LoginButton" source="/Users/angelashi/Documents/GitHub/robotcache/LoginButton.robot">
-<test id="s1-t1" name="Page Navigator" line="13">
-<kw name="Open Browser To HomePage">
+<robot generator="Robot 7.2.2 (Python 3.13.1 on darwin)" generated="2025-03-15T15:39:02.668005" rpa="false" schemaversion="5">
+<suite id="s1" name="Google" source="/Users/angela/Downloads/robotcache/google.robot">
+<test id="s1-t1" name="Valid Login" line="10">
+<kw name="Open Browser To Login Page">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-03-10T10:50:48.745467" level="INFO">Opening browser 'safari' to base url 'https://www.bitopro.com/ns/home'.</msg>
+<msg time="2025-03-15T15:39:02.718111" level="INFO">Opening browser 'chrome' to base url 'https://accounts.google.com/'.</msg>
 <arg>${Url}</arg>
-<arg>${BROWSER}</arg>
+<arg>${Browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-03-10T10:50:48.744979" elapsed="2.483208"/>
+<status status="PASS" start="2025-03-15T15:39:02.717986" elapsed="2.213116"/>
 </kw>
-<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
-<arg>${TIMEOUT}</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-03-10T10:50:51.228858" elapsed="0.002647"/>
+<status status="PASS" start="2025-03-15T15:39:02.717666" elapsed="2.213610"/>
 </kw>
-<status status="PASS" start="2025-03-10T10:50:48.744526" elapsed="2.487196"/>
+<kw name="Type In Email">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-15T15:39:04.931901" level="INFO">Typing text 'aaaaaaaaaaa' into text field 'id=identifierId'.</msg>
+<arg>id=identifierId</arg>
+<arg>${Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-15T15:39:04.931700" elapsed="0.091546"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-03-10T10:50:51.232080" elapsed="0.021407"/>
+<arg>aaaaaaaaaaa</arg>
+<status status="PASS" start="2025-03-15T15:39:04.931512" elapsed="0.091820"/>
 </kw>
-<kw name="Click Login">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-10T10:50:51.254207" level="INFO">Clicking element '//a[contains(text(), '登入')]'.</msg>
-<arg>${LOGIN_LINK}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-10T10:50:51.253958" elapsed="5.255460"/>
+<kw name="Click Nextstep">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-03-15T15:39:05.023685" level="INFO">Clicking button '下一步'.</msg>
+<arg>下一步</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-15T15:39:05.023602" elapsed="0.082613"/>
 </kw>
-<status status="PASS" start="2025-03-10T10:50:51.253742" elapsed="5.255956"/>
+<status status="PASS" start="2025-03-15T15:39:05.023464" elapsed="0.082889"/>
 </kw>
-<kw name="Login Page Should Be Open">
-<kw name="Location Should Be" owner="SeleniumLibrary">
-<msg time="2025-03-10T10:50:56.516492" level="INFO">Current location is 'https://www.bitopro.com/users/sign_in'.</msg>
-<arg>${Location}</arg>
-<doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="PASS" start="2025-03-10T10:50:56.510837" elapsed="0.005953"/>
-</kw>
-<status status="PASS" start="2025-03-10T10:50:56.510198" elapsed="0.006823"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-03-10T10:50:56.517666" elapsed="0.222748"/>
-</kw>
-<status status="PASS" start="2025-03-10T10:50:48.744126" elapsed="7.996540"/>
+<status status="PASS" start="2025-03-15T15:39:02.717299" elapsed="2.389281"/>
 </test>
-<status status="PASS" start="2025-03-10T10:50:48.633078" elapsed="8.108220"/>
+<status status="PASS" start="2025-03-15T15:39:02.668780" elapsed="2.438106"/>
 </suite>
 <statistics>
 <total>
@@ -54,7 +43,7 @@
 <tag>
 </tag>
 <suite>
-<stat name="LoginButton" id="s1" pass="1" fail="0" skip="0">LoginButton</stat>
+<stat name="Google" id="s1" pass="1" fail="0" skip="0">Google</stat>
 </suite>
 </statistics>
 <errors>
