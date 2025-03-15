@@ -11,6 +11,7 @@ Valid Login
     Open Browser To Login Page
     Type In Email    aaaaaaaaaaa
     Click Nextstep
+    Title Should Be    登入 - Google 帳戶
 
 *** Keywords ***
 Open Browser To Login Page
