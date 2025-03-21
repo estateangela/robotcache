@@ -1,55 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.1 on darwin)" generated="2025-03-15T15:57:29.478323" rpa="false" schemaversion="5">
-<suite id="s1" name="Google" source="/Users/angela/Downloads/robotcache/google.robot">
-<test id="s1-t1" name="Valid Login" line="10">
-<kw name="Open Browser To Login Page">
+<robot generator="Robot 7.2.2 (Python 3.9.6 on darwin)" generated="2025-03-21T15:17:33.217779" rpa="false" schemaversion="5">
+<suite id="s1" name="Checkrobot" source="/Users/angelashi/Documents/GitHub/robotcache/Checkrobot.robot">
+<test id="s1-t1" name="測試右下角物件點擊後的文字" line="11">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-03-15T15:57:29.546060" level="INFO">Opening browser 'chrome' to base url 'https://accounts.google.com/'.</msg>
-<arg>${Url}</arg>
-<arg>${Browser}</arg>
+<msg time="2025-03-21T15:17:33.365092" level="INFO">Opening browser 'safari' to base url 'https://www.bitopro.com/ns/home'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-03-15T15:57:29.545972" elapsed="1.209351"/>
+<status status="PASS" start="2025-03-21T15:17:33.364829" elapsed="3.224595"/>
 </kw>
-<status status="PASS" start="2025-03-15T15:57:29.545686" elapsed="1.212078"/>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-21T15:17:36.590964" elapsed="0.040234"/>
 </kw>
-<kw name="Type In Email">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-03-15T15:57:30.761369" level="INFO">Typing text 'aaaaaaaaaaa' into text field 'id=identifierId'.</msg>
-<arg>id=identifierId</arg>
-<arg>${Email}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-15T15:57:30.760588" elapsed="1.246889"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-21T15:17:41.635267" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-21T15:17:36.631898" elapsed="5.004456"/>
 </kw>
-<arg>aaaaaaaaaaa</arg>
-<status status="PASS" start="2025-03-15T15:57:30.759502" elapsed="1.248039"/>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${XPATH_BUTTON}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-21T15:17:41.638202" elapsed="2.206659"/>
 </kw>
-<kw name="Click Nextstep">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-03-15T15:57:32.007871" level="INFO">Clicking button '下一步'.</msg>
-<arg>下一步</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-15T15:57:32.007797" elapsed="0.054521"/>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${XPATH_BUTTON}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-03-21T15:17:43.845585" elapsed="0.262679"/>
 </kw>
-<status status="PASS" start="2025-03-15T15:57:32.007665" elapsed="0.054736"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-21T15:17:46.110070" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-21T15:17:44.109112" elapsed="2.001494"/>
 </kw>
-<kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2025-03-15T15:57:32.064706" level="INFO">Page title is '登入 - Google 帳戶'.</msg>
-<arg>登入 - Google 帳戶</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2025-03-15T15:57:32.062521" elapsed="0.002223"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-21T15:17:46.112929" level="INFO">Clicking element '//*[@id="launcher"]'.</msg>
+<arg>${XPATH_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-21T15:17:46.111727" elapsed="0.062325"/>
 </kw>
-<status status="PASS" start="2025-03-15T15:57:29.545452" elapsed="2.520030"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-21T15:17:48.175728" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-21T15:17:46.174493" elapsed="2.001681"/>
+</kw>
+<kw name="Get Page Source">
+<msg time="2025-03-21T15:17:48.181532" level="FAIL">No keyword with name 'Get Page Source' found.</msg>
+<var>${page_source}</var>
+<status status="FAIL" start="2025-03-21T15:17:48.181186" elapsed="0.000536">No keyword with name 'Get Page Source' found.</status>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${page_source}</arg>
+<arg>${EXPECTED_TEXT}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-03-21T15:17:48.182281" elapsed="0.000088"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2025-03-21T15:17:48.182800" elapsed="0.000098"/>
+</kw>
+<status status="FAIL" start="2025-03-21T15:17:33.363159" elapsed="14.820254">No keyword with name 'Get Page Source' found.</status>
 </test>
-<status status="PASS" start="2025-03-15T15:57:29.478796" elapsed="2.589329"/>
+<status status="FAIL" start="2025-03-21T15:17:33.219992" elapsed="14.964477"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Google" id="s1" pass="1" fail="0" skip="0">Google</stat>
+<stat name="Checkrobot" id="s1" pass="0" fail="1" skip="0">Checkrobot</stat>
 </suite>
 </statistics>
 <errors>

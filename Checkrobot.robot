@@ -3,8 +3,8 @@ Library    SeleniumLibrary
 
 *** Variables ***
 ${URL}            https://www.bitopro.com/ns/home
-${BROWSER}        Chrome
-${XPATH_BUTTON}   //button[contains(@class, 'ssc-1k07fow-1 cbnSms')]  # 更新XPath
+${BROWSER}        safari
+${XPATH_BUTTON}   //*[@id="launcher"]  # 更新XPath
 ${EXPECTED_TEXT}  bitopro小編
 
 *** Test Cases ***
