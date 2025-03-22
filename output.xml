@@ -1,80 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.9.6 on darwin)" generated="2025-03-21T15:17:33.217779" rpa="false" schemaversion="5">
-<suite id="s1" name="Checkrobot" source="/Users/angelashi/Documents/GitHub/robotcache/Checkrobot.robot">
-<test id="s1-t1" name="測試右下角物件點擊後的文字" line="11">
+<robot generator="Robot 7.2.2 (Python 3.13.1 on darwin)" generated="2025-03-22T16:50:37.966486" rpa="false" schemaversion="5">
+<suite id="s1" name="Contact" source="/Users/angela/Downloads/robotcache/contact.robot">
+<test id="s1-t1" name="Check Contact Us" line="11">
+<kw name="Open Browser To HomePage">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-03-21T15:17:33.365092" level="INFO">Opening browser 'safari' to base url 'https://www.bitopro.com/ns/home'.</msg>
+<msg time="2025-03-22T16:50:38.046607" level="INFO">Opening browser 'chrome' to base url 'https://www.bitopro.com/ns/home'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-03-21T15:17:33.364829" elapsed="3.224595"/>
+<status status="PASS" start="2025-03-22T16:50:38.046483" elapsed="6.718674"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-03-21T15:17:36.590964" elapsed="0.040234"/>
+<status status="PASS" start="2025-03-22T16:50:38.046153" elapsed="6.719192"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-21T15:17:41.635267" level="INFO">Slept 5 seconds.</msg>
-<arg>5s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-21T15:17:36.631898" elapsed="5.004456"/>
+<kw name="Mouse Over On Info">
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2025-03-22T16:50:44.765966" level="INFO">Simulating Mouse Over on element '//*[@id="caption-outlined"]'.</msg>
+<arg>${Info}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2025-03-22T16:50:44.765753" elapsed="0.268731"/>
+</kw>
+<status status="PASS" start="2025-03-22T16:50:44.765573" elapsed="0.269098"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${XPATH_BUTTON}</arg>
-<arg>timeout=10s</arg>
+<arg>${Element}</arg>
+<arg>5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-21T15:17:41.638202" elapsed="2.206659"/>
+<status status="PASS" start="2025-03-22T16:50:45.035051" elapsed="0.019247"/>
 </kw>
-<kw name="Scroll Element Into View" owner="SeleniumLibrary">
-<arg>${XPATH_BUTTON}</arg>
-<doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" start="2025-03-21T15:17:43.845585" elapsed="0.262679"/>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${Element}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-03-22T16:50:45.054514" elapsed="0.012184"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-21T15:17:46.110070" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-21T15:17:44.109112" elapsed="2.001494"/>
-</kw>
+<kw name="Click Contact Us">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-21T15:17:46.112929" level="INFO">Clicking element '//*[@id="launcher"]'.</msg>
-<arg>${XPATH_BUTTON}</arg>
+<msg time="2025-03-22T16:50:45.067191" level="INFO">Clicking element '//span[@class='sc-eaf11ace-2 kwrTXJ' and text()='聯絡我們']'.</msg>
+<arg>${Element}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-21T15:17:46.111727" elapsed="0.062325"/>
+<status status="PASS" start="2025-03-22T16:50:45.067069" elapsed="0.517846"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-21T15:17:48.175728" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-21T15:17:46.174493" elapsed="2.001681"/>
+<status status="PASS" start="2025-03-22T16:50:45.066895" elapsed="0.518173"/>
 </kw>
-<kw name="Get Page Source">
-<msg time="2025-03-21T15:17:48.181532" level="FAIL">No keyword with name 'Get Page Source' found.</msg>
-<var>${page_source}</var>
-<status status="FAIL" start="2025-03-21T15:17:48.181186" elapsed="0.000536">No keyword with name 'Get Page Source' found.</status>
+<kw name="Check Url">
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2025-03-22T16:50:45.587433" level="INFO">${current_url} = https://www.bitopro.com/contact</msg>
+<var>${current_url}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2025-03-22T16:50:45.585570" elapsed="0.001883"/>
 </kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${page_source}</arg>
-<arg>${EXPECTED_TEXT}</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="NOT RUN" start="2025-03-21T15:17:48.182281" elapsed="0.000088"/>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${current_url}</arg>
+<arg>https://www.bitopro.com/contact</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-03-22T16:50:45.587533" elapsed="0.000113"/>
 </kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="NOT RUN" start="2025-03-21T15:17:48.182800" elapsed="0.000098"/>
+<status status="PASS" start="2025-03-22T16:50:45.585394" elapsed="0.002282"/>
 </kw>
-<status status="FAIL" start="2025-03-21T15:17:33.363159" elapsed="14.820254">No keyword with name 'Get Page Source' found.</status>
+<doc>檢查聯絡我們超連結</doc>
+<tag>Check Url</tag>
+<status status="PASS" start="2025-03-22T16:50:38.045675" elapsed="7.542078"/>
 </test>
-<status status="FAIL" start="2025-03-21T15:17:33.219992" elapsed="14.964477"/>
+<status status="PASS" start="2025-03-22T16:50:37.966985" elapsed="7.621010"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="1" fail="0" skip="0">Check Url</stat>
 </tag>
 <suite>
-<stat name="Checkrobot" id="s1" pass="0" fail="1" skip="0">Checkrobot</stat>
+<stat name="Contact" id="s1" pass="1" fail="0" skip="0">Contact</stat>
 </suite>
 </statistics>
 <errors>
