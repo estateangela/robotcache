@@ -7,9 +7,9 @@ ${button}    //*[@id="dropdownMenu_announcement"]
 ${Element}    //span[contains(text(), '查看更多')]
 
 *** Test Cases ***
-Check Contact Us
-    [Tags]    Check Url
-    [Documentation]    檢查聯絡我們超連結
+Check header rails more announcements link by no login
+    [Documentation]    檢查 查看更多 Level 0
+    [Tags]    header_rails_level_0_w
     Open Browser To HomePage
     Mouse Over On Info
     Wait Until Element Is Visible    ${Element}    5s
