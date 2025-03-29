@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.1 on darwin)" generated="2025-03-29T15:12:35.270993" rpa="false" schemaversion="5">
+<suite id="s1" name="Robotcache" source="/Users/angela/Downloads/robotcache">
+<suite id="s1-s1" name="Contact" source="/Users/angela/Downloads/robotcache/contact.robot">
+<test id="s1-s1-t1" name="Check Contact Us" line="11">
+<kw name="Open Browser To HomePage">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-29T15:12:35.356701" level="INFO">Opening browser 'chrome' to base url 'https://www.bitopro.com/ns/home'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-29T15:12:35.356508" elapsed="7.612601"/>
+</kw>
+<status status="PASS" start="2025-03-29T15:12:35.356096" elapsed="7.613738"/>
+</kw>
+<kw name="Mouse Over On Info">
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2025-03-29T15:12:42.971353" level="INFO">Simulating Mouse Over on element '//*[@id="caption-outlined"]'.</msg>
+<arg>${Info}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2025-03-29T15:12:42.970862" elapsed="0.277307"/>
+</kw>
+<status status="PASS" start="2025-03-29T15:12:42.970313" elapsed="0.277992"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-03-29T15:12:48.856774" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-03-29T15:12:48.856968" level="FAIL">Element '//span[@class='sc-eaf11ace-2 kwrTXJ' and text()='聯絡我們']' not visible after 5 seconds.</msg>
+<arg>${Element}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-03-29T15:12:43.248443" elapsed="5.610625">Element '//span[@class='sc-eaf11ace-2 kwrTXJ' and text()='聯絡我們']' not visible after 5 seconds.</status>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${Element}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="NOT RUN" start="2025-03-29T15:12:48.859221" elapsed="0.000055"/>
+</kw>
+<kw name="Click Contact Us">
+<status status="NOT RUN" start="2025-03-29T15:12:48.859381" elapsed="0.000042"/>
+</kw>
+<kw name="Check Url">
+<status status="NOT RUN" start="2025-03-29T15:12:48.859491" elapsed="0.000027"/>
+</kw>
+<doc>檢查聯絡我們超連結</doc>
+<tag>Check Url</tag>
+<status status="FAIL" start="2025-03-29T15:12:35.355399" elapsed="13.504236">Element '//span[@class='sc-eaf11ace-2 kwrTXJ' and text()='聯絡我們']' not visible after 5 seconds.</status>
+</test>
+<status status="FAIL" start="2025-03-29T15:12:35.280600" elapsed="13.579390"/>
+</suite>
+<status status="FAIL" start="2025-03-29T15:12:35.274370" elapsed="13.586073"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">Check Url</stat>
+</tag>
+<suite>
+<stat name="Robotcache" id="s1" pass="0" fail="1" skip="0">Robotcache</stat>
+<stat name="Contact" id="s1-s1" pass="0" fail="1" skip="0">Robotcache.Contact</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
