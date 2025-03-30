@@ -1,83 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.1 on darwin)" generated="2025-03-30T21:56:03.823123" rpa="false" schemaversion="5">
-<suite id="s1" name="Autobuy" source="/Users/angela/Downloads/robotcache/autobuy.robot">
-<test id="s1-t1" name="Check Auto Buy" line="11">
+<robot generator="Robot 7.2.2 (Python 3.13.1 on darwin)" generated="2025-03-30T22:05:02.127620" rpa="false" schemaversion="5">
+<suite id="s1" name="Trading" source="/Users/angela/Downloads/robotcache/trading.robot">
+<test id="s1-t1" name="Check Trading" line="11">
 <kw name="Open Browser To HomePage">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-03-30T21:56:03.871120" level="INFO">Opening browser 'chrome' to base url 'https://www.bitopro.com/ns/home'.</msg>
+<msg time="2025-03-30T22:05:02.227156" level="INFO">Opening browser 'chrome' to base url 'https://www.bitopro.com/ns/home'.</msg>
 <arg>${URL}</arg>
 <arg>${Browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-03-30T21:56:03.871026" elapsed="1.413270"/>
+<status status="PASS" start="2025-03-30T22:05:02.227062" elapsed="1.652118"/>
 </kw>
-<status status="PASS" start="2025-03-30T21:56:03.870762" elapsed="1.413815"/>
+<status status="PASS" start="2025-03-30T22:05:02.226783" elapsed="1.652541"/>
 </kw>
-<kw name="Mouse Over On 理財">
+<kw name="Mouse Over On Wallet">
 <kw name="Mouse Over" owner="SeleniumLibrary">
-<msg time="2025-03-30T21:56:05.288754" level="INFO">Simulating Mouse Over on element '//*[@id="header-bar"]/header/nav/section[1]/ul/li[3]'.</msg>
+<msg time="2025-03-30T22:05:03.879901" level="INFO">Simulating Mouse Over on element '//*[@id="header-bar"]/header/nav/section[2]/div[1]/ul/li[1]/span'.</msg>
+<msg time="2025-03-30T22:05:03.991304" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-03-30T22:05:03.991411" level="FAIL">Element with locator '//*[@id="header-bar"]/header/nav/section[2]/div[1]/ul/li[1]/span' not found.</msg>
 <arg>${Mousehover}</arg>
 <doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<status status="PASS" start="2025-03-30T21:56:05.285611" elapsed="0.278409"/>
+<status status="FAIL" start="2025-03-30T22:05:03.879700" elapsed="0.113976">Element with locator '//*[@id="header-bar"]/header/nav/section[2]/div[1]/ul/li[1]/span' not found.</status>
 </kw>
-<status status="PASS" start="2025-03-30T21:56:05.285042" elapsed="0.279157"/>
+<status status="FAIL" start="2025-03-30T22:05:03.879525" elapsed="0.114242">Element with locator '//*[@id="header-bar"]/header/nav/section[2]/div[1]/ul/li[1]/span' not found.</status>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${Element}</arg>
 <arg>5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-30T21:56:05.564450" elapsed="0.017660"/>
+<status status="NOT RUN" start="2025-03-30T22:05:03.993868" elapsed="0.000017"/>
 </kw>
 <kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
 <arg>${Element}</arg>
 <arg>5s</arg>
 <doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2025-03-30T21:56:05.582288" elapsed="0.010980"/>
+<status status="NOT RUN" start="2025-03-30T22:05:03.993935" elapsed="0.000011"/>
 </kw>
-<kw name="Click 定期定額">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-30T21:56:05.593714" level="INFO">Clicking element '//*[@id="header-bar"]/header/nav/section[1]/ul/li[3]/div/div/ul/div[2]/a/div/span/div/span[1]'.</msg>
-<arg>${Element}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-30T21:56:05.593608" elapsed="0.037476"/>
-</kw>
-<status status="PASS" start="2025-03-30T21:56:05.593452" elapsed="0.037729"/>
+<kw name="Click 現貨交易明細">
+<status status="NOT RUN" start="2025-03-30T22:05:03.994020" elapsed="0.000013"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-30T21:56:10.632821" level="INFO">Slept 5 seconds.</msg>
 <arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-30T21:56:05.631325" elapsed="5.002246"/>
+<status status="NOT RUN" start="2025-03-30T22:05:03.994081" elapsed="0.000011"/>
 </kw>
 <kw name="Check Url">
-<kw name="Get Location" owner="SeleniumLibrary">
-<msg time="2025-03-30T21:56:10.642568" level="INFO">${current_url} = https://www.bitopro.com/ns/auto-invest</msg>
-<var>${current_url}</var>
-<doc>Returns the current browser window URL.</doc>
-<status status="PASS" start="2025-03-30T21:56:10.635497" elapsed="0.007123"/>
+<status status="NOT RUN" start="2025-03-30T22:05:03.994139" elapsed="0.000011"/>
 </kw>
-<kw name="Should Be Equal As Strings" owner="BuiltIn">
-<arg>${current_url}</arg>
-<arg>https://www.bitopro.com/ns/auto-invest</arg>
-<doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2025-03-30T21:56:10.642842" elapsed="0.000324"/>
-</kw>
-<status status="PASS" start="2025-03-30T21:56:10.634705" elapsed="0.008552"/>
-</kw>
-<doc>檢查理財下拉選單超連結 - 定期定額</doc>
+<doc>檢查錢包下拉選項超連結 - 現貨交易明細</doc>
 <tag>Check Url</tag>
-<status status="PASS" start="2025-03-30T21:56:03.870159" elapsed="6.773454"/>
+<status status="FAIL" start="2025-03-30T22:05:02.226128" elapsed="1.768103">Element with locator '//*[@id="header-bar"]/header/nav/section[2]/div[1]/ul/li[1]/span' not found.</status>
 </test>
-<status status="PASS" start="2025-03-30T21:56:03.823829" elapsed="6.820550"/>
+<status status="FAIL" start="2025-03-30T22:05:02.128097" elapsed="1.866317"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">Check Url</stat>
+<stat pass="0" fail="1" skip="0">Check Url</stat>
 </tag>
 <suite>
-<stat name="Autobuy" id="s1" pass="1" fail="0" skip="0">Autobuy</stat>
+<stat name="Trading" id="s1" pass="0" fail="1" skip="0">Trading</stat>
 </suite>
 </statistics>
 <errors>
