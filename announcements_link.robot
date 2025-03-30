@@ -1,5 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
+
 *** Variables ***
 ${URL}    https://demo.bitopro.com/bito_coin
 ${Browser}    chrome

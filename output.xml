@@ -1,57 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.1 on darwin)" generated="2025-03-29T15:13:27.876140" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.13.1 on darwin)" generated="2025-03-30T21:56:03.823123" rpa="false" schemaversion="5">
 <suite id="s1" name="Autobuy" source="/Users/angela/Downloads/robotcache/autobuy.robot">
 <test id="s1-t1" name="Check Auto Buy" line="11">
 <kw name="Open Browser To HomePage">
-<kw name="Open Browser">
-<msg time="2025-03-29T15:13:27.888962" level="FAIL">No keyword with name 'Open Browser' found.</msg>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-30T21:56:03.871120" level="INFO">Opening browser 'chrome' to base url 'https://www.bitopro.com/ns/home'.</msg>
 <arg>${URL}</arg>
 <arg>${Browser}</arg>
-<status status="FAIL" start="2025-03-29T15:13:27.888943" elapsed="0.000048">No keyword with name 'Open Browser' found.</status>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-30T21:56:03.871026" elapsed="1.413270"/>
 </kw>
-<status status="FAIL" start="2025-03-29T15:13:27.888470" elapsed="0.000592">No keyword with name 'Open Browser' found.</status>
+<status status="PASS" start="2025-03-30T21:56:03.870762" elapsed="1.413815"/>
 </kw>
 <kw name="Mouse Over On 理財">
-<status status="NOT RUN" start="2025-03-29T15:13:27.889142" elapsed="0.000011"/>
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2025-03-30T21:56:05.288754" level="INFO">Simulating Mouse Over on element '//*[@id="header-bar"]/header/nav/section[1]/ul/li[3]'.</msg>
+<arg>${Mousehover}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2025-03-30T21:56:05.285611" elapsed="0.278409"/>
 </kw>
-<kw name="Wait Until Element Is Visible">
+<status status="PASS" start="2025-03-30T21:56:05.285042" elapsed="0.279157"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${Element}</arg>
 <arg>5s</arg>
-<status status="NOT RUN" start="2025-03-29T15:13:27.889204" elapsed="0.000006"/>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-30T21:56:05.564450" elapsed="0.017660"/>
 </kw>
-<kw name="Wait Until Element Is Enabled">
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
 <arg>${Element}</arg>
 <arg>5s</arg>
-<status status="NOT RUN" start="2025-03-29T15:13:27.889249" elapsed="0.000006"/>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-03-30T21:56:05.582288" elapsed="0.010980"/>
 </kw>
 <kw name="Click 定期定額">
-<status status="NOT RUN" start="2025-03-29T15:13:27.889298" elapsed="0.000006"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-30T21:56:05.593714" level="INFO">Clicking element '//*[@id="header-bar"]/header/nav/section[1]/ul/li[3]/div/div/ul/div[2]/a/div/span/div/span[1]'.</msg>
+<arg>${Element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-30T21:56:05.593608" elapsed="0.037476"/>
+</kw>
+<status status="PASS" start="2025-03-30T21:56:05.593452" elapsed="0.037729"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-30T21:56:10.632821" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-30T21:56:05.631325" elapsed="5.002246"/>
 </kw>
 <kw name="Check Url">
-<status status="NOT RUN" start="2025-03-29T15:13:27.889341" elapsed="0.000006"/>
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2025-03-30T21:56:10.642568" level="INFO">${current_url} = https://www.bitopro.com/ns/auto-invest</msg>
+<var>${current_url}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2025-03-30T21:56:10.635497" elapsed="0.007123"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${current_url}</arg>
+<arg>https://www.bitopro.com/ns/auto-invest</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-03-30T21:56:10.642842" elapsed="0.000324"/>
+</kw>
+<status status="PASS" start="2025-03-30T21:56:10.634705" elapsed="0.008552"/>
 </kw>
 <doc>檢查理財下拉選單超連結 - 定期定額</doc>
 <tag>Check Url</tag>
-<status status="FAIL" start="2025-03-29T15:13:27.887847" elapsed="0.001554">No keyword with name 'Open Browser' found.</status>
+<status status="PASS" start="2025-03-30T21:56:03.870159" elapsed="6.773454"/>
 </test>
-<status status="FAIL" start="2025-03-29T15:13:27.876598" elapsed="0.012948"/>
+<status status="PASS" start="2025-03-30T21:56:03.823829" elapsed="6.820550"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1" skip="0">Check Url</stat>
+<stat pass="1" fail="0" skip="0">Check Url</stat>
 </tag>
 <suite>
-<stat name="Autobuy" id="s1" pass="0" fail="1" skip="0">Autobuy</stat>
+<stat name="Autobuy" id="s1" pass="1" fail="0" skip="0">Autobuy</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2025-03-29T15:13:27.873407" level="ERROR">Error in file '/Users/angela/Downloads/robotcache/autobuy.robot' on line 5: Non-existing setting '${URL}'.</msg>
-<msg time="2025-03-29T15:13:27.873445" level="ERROR">Error in file '/Users/angela/Downloads/robotcache/autobuy.robot' on line 6: Non-existing setting '${Browser}'.</msg>
-<msg time="2025-03-29T15:13:27.873461" level="ERROR">Error in file '/Users/angela/Downloads/robotcache/autobuy.robot' on line 7: Non-existing setting '${Mousehover}'.</msg>
-<msg time="2025-03-29T15:13:27.873475" level="ERROR">Error in file '/Users/angela/Downloads/robotcache/autobuy.robot' on line 8: Non-existing setting '${Element}'.</msg>
-<msg time="2025-03-29T15:13:27.876646" level="ERROR">Error in file '/Users/angela/Downloads/robotcache/autobuy.robot' on line 2: Setting variable 'Library' failed: Invalid variable name 'Library'.</msg>
 </errors>
 </robot>

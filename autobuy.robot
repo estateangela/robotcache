@@ -1,11 +1,11 @@
-*** Variables ***
+*** Settings ***
 Library    SeleniumLibrary
 
-*** Settings ***
-${URL}    https://www.bitopro.com/ns/home
-${Browser}    chrome
-${Mousehover}    //*[@id="header-bar"]/header/nav/section[1]/ul/li[3]
-${Element}    //*[@class='sc-9cd00289-1 fvgSxR' and text()='聯絡我們']
+*** Variables ***
+${URL}  https://www.bitopro.com/ns/home
+${Browser}  chrome
+${Mousehover}   //*[@id="header-bar"]/header/nav/section[1]/ul/li[3]
+${Element}  //*[@id="header-bar"]/header/nav/section[1]/ul/li[3]/div/div/ul/div[2]/a/div/span/div/span[1]
 
 *** Test Cases ***
 Check Auto Buy
@@ -16,6 +16,7 @@ Check Auto Buy
     Wait Until Element Is Visible    ${Element}    5s
     Wait Until Element Is Enabled    ${Element}    5s
     Click 定期定額
+    Sleep    5s
     Check Url
 
 *** Keywords ***
