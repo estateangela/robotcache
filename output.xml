@@ -1,66 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.1 on darwin)" generated="2025-04-03T14:53:32.195606" rpa="false" schemaversion="5">
-<suite id="s1" name="Trading" source="/Users/angela/Downloads/robotcache/trading.robot">
-<test id="s1-t1" name="Check Trading" line="10">
+<robot generator="Robot 7.2.2 (Python 3.13.1 on darwin)" generated="2025-04-03T15:07:48.659739" rpa="false" schemaversion="5">
+<suite id="s1" name="Cakeresume" source="/Users/angela/Downloads/robotcache/cakeresume.robot">
+<test id="s1-t1" name="Check Url" line="11">
 <kw name="Open Browser To HomePage">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-04-03T14:53:32.244727" level="INFO">Opening browser 'chrome' to base url 'https://www.bitopro.com/bito_coin'.</msg>
+<msg time="2025-04-03T15:07:48.727124" level="INFO">Opening browser 'chrome' to base url 'https://www.bitopro.com/bito_coin'.</msg>
 <arg>${URL}</arg>
 <arg>${Browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-04-03T14:53:32.244626" elapsed="1.100683"/>
+<status status="PASS" start="2025-04-03T15:07:48.727024" elapsed="1.071696"/>
 </kw>
-<status status="PASS" start="2025-04-03T14:53:32.244354" elapsed="1.101124"/>
+<status status="PASS" start="2025-04-03T15:07:48.726740" elapsed="1.072407"/>
 </kw>
-<kw name="Mouse Over On Wallet">
-<kw name="Mouse Over" owner="SeleniumLibrary">
-<msg time="2025-04-03T14:53:33.346086" level="INFO">Simulating Mouse Over on element '//*[@id="dropdownMenu_wallet"]'.</msg>
-<msg time="2025-04-03T14:53:33.636573" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-04-03T14:53:33.636674" level="FAIL">Element with locator '//*[@id="dropdownMenu_wallet"]' not found.</msg>
-<arg>${Mousehover}</arg>
-<doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<status status="FAIL" start="2025-04-03T14:53:33.345875" elapsed="0.293928">Element with locator '//*[@id="dropdownMenu_wallet"]' not found.</status>
-</kw>
-<status status="FAIL" start="2025-04-03T14:53:33.345697" elapsed="0.294190">Element with locator '//*[@id="dropdownMenu_wallet"]' not found.</status>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<kw name="Click 人才招募">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
 <arg>${Element}</arg>
-<arg>5s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2025-04-03T14:53:33.639983" elapsed="0.000017"/>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-04-03T15:07:49.799626" elapsed="0.268482"/>
 </kw>
-<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-03T15:07:50.068348" level="INFO">Clicking element '//a[contains(text(), '人才招募')]'.</msg>
 <arg>${Element}</arg>
-<arg>5s</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="NOT RUN" start="2025-04-03T14:53:33.640049" elapsed="0.000010"/>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-03T15:07:50.068219" elapsed="0.052257"/>
 </kw>
-<kw name="Click 現貨交易明細">
-<status status="NOT RUN" start="2025-04-03T14:53:33.640126" elapsed="0.000013"/>
+<status status="PASS" start="2025-04-03T15:07:49.799423" elapsed="0.321120"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-03T15:07:55.122813" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-03T15:07:50.120651" elapsed="5.002833"/>
+</kw>
+<kw name="Click Cakeresume">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<msg time="2025-04-03T15:07:55.286287" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-04-03T15:07:55.286439" level="FAIL">Element with locator '/html/body/div[1]/div[2]/div/ul[2]/li/a' not found.</msg>
+<arg>${link}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="FAIL" start="2025-04-03T15:07:55.125310" elapsed="0.163302">Element with locator '/html/body/div[1]/div[2]/div/ul[2]/li/a' not found.</status>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-04-03T15:07:55.288714" elapsed="0.000016"/>
+</kw>
+<status status="FAIL" start="2025-04-03T15:07:55.124643" elapsed="0.164148">Element with locator '/html/body/div[1]/div[2]/div/ul[2]/li/a' not found.</status>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
 <arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-04-03T14:53:33.640186" elapsed="0.000011"/>
+<status status="NOT RUN" start="2025-04-03T15:07:55.288869" elapsed="0.000015"/>
 </kw>
 <kw name="Check Url">
-<status status="NOT RUN" start="2025-04-03T14:53:33.640246" elapsed="0.000009"/>
+<status status="NOT RUN" start="2025-04-03T15:07:55.288962" elapsed="0.000014"/>
 </kw>
-<doc>檢查錢包下拉選項超連結 - 現貨交易明細</doc>
-<tag>Check Url rails</tag>
-<status status="FAIL" start="2025-04-03T14:53:32.243716" elapsed="1.396611">Element with locator '//*[@id="dropdownMenu_wallet"]' not found.</status>
+<doc>檢查連結導向 - Cakeresume</doc>
+<tag>Check footer Url</tag>
+<tag>rails</tag>
+<status status="FAIL" start="2025-04-03T15:07:48.726333" elapsed="6.562735">Element with locator '/html/body/div[1]/div[2]/div/ul[2]/li/a' not found.</status>
 </test>
-<status status="FAIL" start="2025-04-03T14:53:32.196318" elapsed="1.444189"/>
+<status status="FAIL" start="2025-04-03T15:07:48.660184" elapsed="6.629102"/>
 </suite>
 <statistics>
 <total>
 <stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1" skip="0">Check Url rails</stat>
+<stat pass="0" fail="1" skip="0">Check footer Url</stat>
+<stat pass="0" fail="1" skip="0">rails</stat>
 </tag>
 <suite>
-<stat name="Trading" id="s1" pass="0" fail="1" skip="0">Trading</stat>
+<stat name="Cakeresume" id="s1" pass="0" fail="1" skip="0">Cakeresume</stat>
 </suite>
 </statistics>
 <errors>
