@@ -2,14 +2,13 @@
 Library    SeleniumLibrary
 
 *** Variables ***
-${URL}  https://www.bitopro.com/ns/home
+${URL}  https://www.bitopro.com/bito_coin
 ${Browser}  chrome
-${Mousehover}   //*[@id="header-bar"]/header/nav/section[1]/ul/li[3]
-${Element}  //*[@id="header-bar"]/header/nav/section[1]/ul/li[3]/div/div/ul/div[2]/a/div/span/div/span[1]
-
+${Mousehover}   //*[@id="dropdownMenu_financial_management"]
+${Element}  //p[contains(text(), '定期定額')]
 *** Test Cases ***
 Check Auto Buy
-    [Tags]    Check Url
+    [Tags]    Check Url rails
     [Documentation]    檢查理財下拉選單超連結 - 定期定額
     Open Browser To HomePage
     Mouse Over On 理財

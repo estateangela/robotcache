@@ -2,14 +2,13 @@
 Library    SeleniumLibrary
 
 *** Variables ***
-${URL}  https://www.bitopro.com/ns/home
+${URL}  https://www.bitopro.com/bito_coin
 ${Browser}  chrome
-${Mousehover}   //*[@id="header-bar"]/header/nav/section[2]/div[1]/ul/li[1]/span
-${Element}  //*[@id="header-bar"]/header/nav/section[2]/div[1]/ul/li[1]/div/div/ul/div[4]/a/div/span/div/span
-
+${Mousehover}   //*[@id="dropdownMenu_wallet"]
+${Element}  //span[contains(text(), '現貨交易明細')]
 *** Test Cases ***
 Check Trading
-    [Tags]    Check Url
+    [Tags]    Check Url rails
     [Documentation]    檢查錢包下拉選項超連結 - 現貨交易明細
     Open Browser To HomePage
     Mouse Over On Wallet
