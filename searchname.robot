@@ -6,7 +6,6 @@ ${Url}    https://www.google.com/
 ${browser}    chrome
 ${Name}    Angela Shi
 ${Input}    //*[@id="APjFqb"]
-${button}    //input[@data-ved="0ahUKEwjquoP_68-MAxUIZvUHHcPEPZMQ4dUDCBk"]
 
 *** Test Cases ***
 Search Name
@@ -14,6 +13,7 @@ Search Name
     Open Browser To Google
     Type In Name
     Click Search Button
+    Click Checkbox
     Check Contents
 
 *** Keywords ***
@@ -22,7 +22,10 @@ Open Browser To Google
 Type In Name
     Input Text    ${Input}    ${Name}
 Click Search Button
-    Press Key    locator    key
+    Press Keys    ${Input}    RETURN
+Click Checkbox
+    Click Element    //*[@id="recaptcha-anchor"]/div[1]
 Check Contents
+    Wait Until Page Contains    ${Name}    timeout=10s
     Page Should Contain    ${Name}
     

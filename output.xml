@@ -1,46 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0 (Python 3.9.6 on darwin)" generated="20250411 19:25:45.818" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0 (Python 3.9.6 on darwin)" generated="20250414 16:16:47.818" rpa="false" schemaversion="3">
 <suite id="s1" name="Searchname" source="/Users/angelashi/Documents/GitHub/robotcache/searchname.robot">
-<test id="s1-t1" name="Search Name" line="12">
+<test id="s1-t1" name="Search Name" line="11">
 <kw name="Open Browser To Google">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${Url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20250411 19:25:45.944" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/'.</msg>
-<status status="PASS" starttime="20250411 19:25:45.943" endtime="20250411 19:25:48.899"/>
+<msg timestamp="20250414 16:16:47.944" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/'.</msg>
+<status status="PASS" starttime="20250414 16:16:47.944" endtime="20250414 16:16:50.039"/>
 </kw>
-<status status="PASS" starttime="20250411 19:25:45.943" endtime="20250411 19:25:48.901"/>
+<status status="PASS" starttime="20250414 16:16:47.944" endtime="20250414 16:16:50.041"/>
 </kw>
 <kw name="Type In Name">
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${Input}</arg>
 <arg>${Name}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20250411 19:25:48.903" level="INFO">Typing text 'Angela Shi' into text field '//*[@id="APjFqb"]'.</msg>
-<status status="PASS" starttime="20250411 19:25:48.902" endtime="20250411 19:25:49.049"/>
+<msg timestamp="20250414 16:16:50.048" level="INFO">Typing text 'Angela Shi' into text field '//*[@id="APjFqb"]'.</msg>
+<status status="PASS" starttime="20250414 16:16:50.046" endtime="20250414 16:16:50.736"/>
 </kw>
-<status status="PASS" starttime="20250411 19:25:48.901" endtime="20250411 19:25:49.049"/>
+<status status="PASS" starttime="20250414 16:16:50.043" endtime="20250414 16:16:50.737"/>
 </kw>
 <kw name="Click Search Button">
-<kw name="Press Key" library="SeleniumLibrary">
-<arg>locator</arg>
-<arg>key</arg>
-<doc>*DEPRECATED in SeleniumLibrary 4.0.* use `Press Keys` instead.</doc>
-<msg timestamp="20250411 19:25:49.050" level="WARN">Keyword 'SeleniumLibrary.Press Key' is deprecated. use `Press Keys` instead.</msg>
-<msg timestamp="20250411 19:25:50.129" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20250411 19:25:50.129" level="FAIL">Element with locator 'locator' not found.</msg>
-<status status="FAIL" starttime="20250411 19:25:49.050" endtime="20250411 19:25:50.137"/>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${Input}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20250414 16:16:50.738" level="INFO">Sending key(s) ('RETURN',) to //*[@id="APjFqb"] element.</msg>
+<msg timestamp="20250414 16:16:51.017" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20250414 16:16:51.017" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20250414 16:16:50.737" endtime="20250414 16:16:51.029"/>
 </kw>
-<status status="FAIL" starttime="20250411 19:25:49.049" endtime="20250411 19:25:50.137"/>
+<status status="PASS" starttime="20250414 16:16:50.737" endtime="20250414 16:16:51.029"/>
+</kw>
+<kw name="Click Checkbox">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@id="recaptcha-anchor"]/div[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250414 16:16:51.031" level="INFO">Clicking element '//*[@id="recaptcha-anchor"]/div[1]'.</msg>
+<msg timestamp="20250414 16:16:51.827" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20250414 16:16:51.827" level="FAIL">Element with locator '//*[@id="recaptcha-anchor"]/div[1]' not found.</msg>
+<status status="FAIL" starttime="20250414 16:16:51.030" endtime="20250414 16:16:51.835"/>
+</kw>
+<status status="FAIL" starttime="20250414 16:16:51.030" endtime="20250414 16:16:51.835"/>
 </kw>
 <kw name="Check Contents">
-<status status="NOT RUN" starttime="20250411 19:25:50.137" endtime="20250411 19:25:50.137"/>
+<status status="NOT RUN" starttime="20250414 16:16:51.835" endtime="20250414 16:16:51.835"/>
 </kw>
 <doc>請自動化 Google 搜尋自己名字 的流程</doc>
-<status status="FAIL" starttime="20250411 19:25:45.942" endtime="20250411 19:25:50.137">Element with locator 'locator' not found.</status>
+<status status="FAIL" starttime="20250414 16:16:47.943" endtime="20250414 16:16:51.836">Element with locator '//*[@id="recaptcha-anchor"]/div[1]' not found.</status>
 </test>
-<status status="FAIL" starttime="20250411 19:25:45.821" endtime="20250411 19:25:50.138"/>
+<status status="FAIL" starttime="20250414 16:16:47.821" endtime="20250414 16:16:51.837"/>
 </suite>
 <statistics>
 <total>
@@ -53,6 +64,5 @@
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20250411 19:25:49.050" level="WARN">Keyword 'SeleniumLibrary.Press Key' is deprecated. use `Press Keys` instead.</msg>
 </errors>
 </robot>
