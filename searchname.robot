@@ -18,10 +18,8 @@ Search Name
 *** Keywords ***
 Open Browser To Google
      Open Browser    ${Url}    ${browser}
-     Sleep    5s
 Type In Name
     Input Text    ${Input}    ${Name}
-    Sleep    5s
 Click Search Button
     Press Keys    ${Input}    RETURN
 Check Contents
