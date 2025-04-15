@@ -1,57 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0 (Python 3.9.6 on darwin)" generated="20250414 16:16:47.818" rpa="false" schemaversion="3">
-<suite id="s1" name="Searchname" source="/Users/angelashi/Documents/GitHub/robotcache/searchname.robot">
-<test id="s1-t1" name="Search Name" line="11">
-<kw name="Open Browser To Google">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>${Url}</arg>
-<arg>${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20250414 16:16:47.944" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/'.</msg>
-<status status="PASS" starttime="20250414 16:16:47.944" endtime="20250414 16:16:50.039"/>
+<robot generator="Robot 6.0 (Python 3.9.6 on darwin)" generated="20250414 17:57:37.366" rpa="false" schemaversion="3">
+<suite id="s1" name="Api" source="/Users/angelashi/Documents/GitHub/robotcache/api.robot">
+<test id="s1-t1" name="Verify GET Request" line="7">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>weather_api</arg>
+<arg>https://www.metaweather.com</arg>
+<arg>verify=true</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20250414 17:57:37.499" level="INFO">Creating Session using : alias=weather_api, url=https://www.metaweather.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20250414 17:57:37.499" endtime="20250414 17:57:37.501"/>
 </kw>
-<status status="PASS" starttime="20250414 16:16:47.944" endtime="20250414 16:16:50.041"/>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>weather_api</arg>
+<arg>/api/location/search/</arg>
+<arg>params=query=london</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20250414 17:57:38.159" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1129)'))': /api/location/search/?query=london</msg>
+<msg timestamp="20250414 17:57:38.389" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1129)'))': /api/location/search/?query=london</msg>
+<msg timestamp="20250414 17:57:38.831" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1129)'))': /api/location/search/?query=london</msg>
+<msg timestamp="20250414 17:57:38.871" level="FAIL">SSLError: HTTPSConnectionPool(host='www.metaweather.com', port=443): Max retries exceeded with url: /api/location/search/?query=london (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1129)')))</msg>
+<status status="FAIL" starttime="20250414 17:57:37.502" endtime="20250414 17:57:38.896"/>
 </kw>
-<kw name="Type In Name">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${Input}</arg>
-<arg>${Name}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20250414 16:16:50.048" level="INFO">Typing text 'Angela Shi' into text field '//*[@id="APjFqb"]'.</msg>
-<status status="PASS" starttime="20250414 16:16:50.046" endtime="20250414 16:16:50.736"/>
+<kw name="Status Should Be" library="RequestsLibrary">
+<arg>200</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="NOT RUN" starttime="20250414 17:57:38.896" endtime="20250414 17:57:38.896"/>
 </kw>
-<status status="PASS" starttime="20250414 16:16:50.043" endtime="20250414 16:16:50.737"/>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${location_type}</var>
+<arg>${response.json()}</arg>
+<arg>$[0].location_type</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="NOT RUN" starttime="20250414 17:57:38.897" endtime="20250414 17:57:38.897"/>
 </kw>
-<kw name="Click Search Button">
-<kw name="Press Keys" library="SeleniumLibrary">
-<arg>${Input}</arg>
-<arg>RETURN</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20250414 16:16:50.738" level="INFO">Sending key(s) ('RETURN',) to //*[@id="APjFqb"] element.</msg>
-<msg timestamp="20250414 16:16:51.017" level="INFO">Pressing special key RETURN to element.</msg>
-<msg timestamp="20250414 16:16:51.017" level="INFO">Releasing special key RETURN.</msg>
-<status status="PASS" starttime="20250414 16:16:50.737" endtime="20250414 16:16:51.029"/>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${location_type[0]}</arg>
+<arg>City</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="NOT RUN" starttime="20250414 17:57:38.898" endtime="20250414 17:57:38.898"/>
 </kw>
-<status status="PASS" starttime="20250414 16:16:50.737" endtime="20250414 16:16:51.029"/>
-</kw>
-<kw name="Click Checkbox">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>//*[@id="recaptcha-anchor"]/div[1]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20250414 16:16:51.031" level="INFO">Clicking element '//*[@id="recaptcha-anchor"]/div[1]'.</msg>
-<msg timestamp="20250414 16:16:51.827" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20250414 16:16:51.827" level="FAIL">Element with locator '//*[@id="recaptcha-anchor"]/div[1]' not found.</msg>
-<status status="FAIL" starttime="20250414 16:16:51.030" endtime="20250414 16:16:51.835"/>
-</kw>
-<status status="FAIL" starttime="20250414 16:16:51.030" endtime="20250414 16:16:51.835"/>
-</kw>
-<kw name="Check Contents">
-<status status="NOT RUN" starttime="20250414 16:16:51.835" endtime="20250414 16:16:51.835"/>
-</kw>
-<doc>請自動化 Google 搜尋自己名字 的流程</doc>
-<status status="FAIL" starttime="20250414 16:16:47.943" endtime="20250414 16:16:51.836">Element with locator '//*[@id="recaptcha-anchor"]/div[1]' not found.</status>
+<status status="FAIL" starttime="20250414 17:57:37.499" endtime="20250414 17:57:38.898">SSLError: HTTPSConnectionPool(host='www.metaweather.com', port=443): Max retries exceeded with url: /api/location/search/?query=london (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1129)')))</status>
 </test>
-<status status="FAIL" starttime="20250414 16:16:47.821" endtime="20250414 16:16:51.837"/>
+<status status="FAIL" starttime="20250414 17:57:37.370" endtime="20250414 17:57:38.900"/>
 </suite>
 <statistics>
 <total>
@@ -60,9 +52,12 @@
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Searchname">Searchname</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Api">Api</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20250414 17:57:38.159" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1129)'))': /api/location/search/?query=london</msg>
+<msg timestamp="20250414 17:57:38.389" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1129)'))': /api/location/search/?query=london</msg>
+<msg timestamp="20250414 17:57:38.831" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1129)'))': /api/location/search/?query=london</msg>
 </errors>
 </robot>

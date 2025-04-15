@@ -13,18 +13,17 @@ Search Name
     Open Browser To Google
     Type In Name
     Click Search Button
-    Click Checkbox
     Check Contents
 
 *** Keywords ***
 Open Browser To Google
      Open Browser    ${Url}    ${browser}
+     Sleep    5s
 Type In Name
     Input Text    ${Input}    ${Name}
+    Sleep    5s
 Click Search Button
     Press Keys    ${Input}    RETURN
-Click Checkbox
-    Click Element    //*[@id="recaptcha-anchor"]/div[1]
 Check Contents
     Wait Until Page Contains    ${Name}    timeout=10s
     Page Should Contain    ${Name}
