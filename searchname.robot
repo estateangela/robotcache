@@ -22,6 +22,7 @@ Type In Name
     Input Text    ${Input}    ${Name}
 Click Search Button
     Press Keys    ${Input}    RETURN
+Wait 10s
 Check Contents
     Wait Until Page Contains    ${Name}    timeout=10s
     Page Should Contain    ${Name}

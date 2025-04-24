@@ -1,105 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0 (Python 3.9.6 on darwin)" generated="20250415 10:27:42.977" rpa="false" schemaversion="3">
-<suite id="s1" name="Api" source="/Users/angelashi/Documents/GitHub/robotcache/api.robot">
-<test id="s1-t1" name="Verify GET Request" line="7">
-<kw name="Create Session" library="RequestsLibrary">
-<arg>weather_api</arg>
-<arg>https://www.metaweather.com</arg>
-<arg>verify=true</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20250415 10:27:43.127" level="INFO">Creating Session using : alias=weather_api, url=https://www.metaweather.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
-<status status="PASS" starttime="20250415 10:27:43.127" endtime="20250415 10:27:43.130"/>
+<robot generator="Robot 7.2.2 (Python 3.13.1 on darwin)" generated="2025-04-24T19:11:17.453711" rpa="false" schemaversion="5">
+<suite id="s1" name="Searchname" source="/Users/angela/Downloads/robotcache/searchname.robot">
+<test id="s1-t1" name="Search Name" line="11">
+<kw name="Open Browser To Google">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-04-24T19:11:17.501130" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/'.</msg>
+<arg>${Url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-04-24T19:11:17.501034" elapsed="2.670986"/>
 </kw>
-<kw name="GET On Session" library="RequestsLibrary">
-<var>${response}</var>
-<arg>weather_api</arg>
-<arg>/api/location/search/</arg>
-<arg>params=query=taiwan</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20250415 10:27:43.199" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1129)'))': /api/location/search/?query=taiwan</msg>
-<msg timestamp="20250415 10:27:43.437" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1129)'))': /api/location/search/?query=taiwan</msg>
-<msg timestamp="20250415 10:27:43.888" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1129)'))': /api/location/search/?query=taiwan</msg>
-<msg timestamp="20250415 10:27:43.917" level="FAIL">SSLError: HTTPSConnectionPool(host='www.metaweather.com', port=443): Max retries exceeded with url: /api/location/search/?query=taiwan (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1129)')))</msg>
-<status status="FAIL" starttime="20250415 10:27:43.130" endtime="20250415 10:27:43.941"/>
+<status status="PASS" start="2025-04-24T19:11:17.500766" elapsed="2.671523"/>
 </kw>
-<kw name="Status Should Be" library="RequestsLibrary">
-<arg>200</arg>
-<arg>${response}</arg>
-<doc>Fails if response status code is different than the expected.</doc>
-<status status="NOT RUN" starttime="20250415 10:27:43.941" endtime="20250415 10:27:43.942"/>
+<kw name="Type In Name">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-24T19:11:20.173260" level="INFO">Typing text 'Angela Shi' into text field '//*[@id="APjFqb"]'.</msg>
+<arg>${Input}</arg>
+<arg>${Name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-24T19:11:20.172931" elapsed="0.080683"/>
 </kw>
-<kw name="Get Value From Json" library="JSONLibrary">
-<var>${location_type}</var>
-<arg>${response.json()}</arg>
-<arg>$[0].location_type</arg>
-<doc>Get Value From JSON using JSONPath</doc>
-<status status="NOT RUN" starttime="20250415 10:27:43.942" endtime="20250415 10:27:43.942"/>
+<status status="PASS" start="2025-04-24T19:11:20.172648" elapsed="0.081060"/>
 </kw>
-<kw name="Should Contain" library="BuiltIn">
-<arg>${location_type[0]}</arg>
-<arg>City</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="NOT RUN" starttime="20250415 10:27:43.943" endtime="20250415 10:27:43.943"/>
+<kw name="Click Search Button">
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-04-24T19:11:20.254306" level="INFO">Sending key(s) ('RETURN',) to //*[@id="APjFqb"] element.</msg>
+<msg time="2025-04-24T19:11:20.534712" level="INFO">Pressing special key RETURN to element.</msg>
+<msg time="2025-04-24T19:11:20.534835" level="INFO">Releasing special key RETURN.</msg>
+<arg>${Input}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-04-24T19:11:20.254057" elapsed="0.473002"/>
 </kw>
-<kw name="Create Dictionary" library="BuiltIn">
-<var>${headers}</var>
-<arg>Authorization=Bearer ${token}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="NOT RUN" starttime="20250415 10:27:43.943" endtime="20250415 10:27:43.944"/>
+<status status="PASS" start="2025-04-24T19:11:20.253870" elapsed="0.473394"/>
 </kw>
-<kw name="GET On Session" library="RequestsLibrary">
-<var>${response}</var>
-<arg>mysession</arg>
-<arg>/secure-endpoint</arg>
-<arg>headers=${headers}</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="NOT RUN" starttime="20250415 10:27:43.944" endtime="20250415 10:27:43.945"/>
+<kw name="Check Contents">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${Name}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-04-24T19:11:20.728086" elapsed="15.752747"/>
 </kw>
-<kw name="Create Dictionary" library="BuiltIn">
-<var>${data}</var>
-<arg>name=New Name</arg>
-<arg>email=new@example.com</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="NOT RUN" starttime="20250415 10:27:43.945" endtime="20250415 10:27:43.946"/>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-04-24T19:11:36.494504" level="INFO">Current page contains text 'Angela Shi'.</msg>
+<arg>${Name}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-04-24T19:11:36.480988" elapsed="0.013569"/>
 </kw>
-<kw name="PUT On Session" library="RequestsLibrary">
-<var>${response}</var>
-<arg>mysession</arg>
-<arg>/users/123</arg>
-<arg>json=${data}</arg>
-<doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<status status="NOT RUN" starttime="20250415 10:27:43.946" endtime="20250415 10:27:43.947"/>
+<status status="PASS" start="2025-04-24T19:11:20.727644" elapsed="15.766966"/>
 </kw>
-<kw name="DELETE On Session" library="RequestsLibrary">
-<var>${response}</var>
-<arg>mysession</arg>
-<arg>/users/123</arg>
-<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
-<status status="NOT RUN" starttime="20250415 10:27:43.947" endtime="20250415 10:27:43.948"/>
-</kw>
-<kw name="Status Should Be" library="RequestsLibrary">
-<arg>204</arg>
-<arg>${response}</arg>
-<doc>Fails if response status code is different than the expected.</doc>
-<status status="NOT RUN" starttime="20250415 10:27:43.948" endtime="20250415 10:27:43.948"/>
-</kw>
-<status status="FAIL" starttime="20250415 10:27:43.126" endtime="20250415 10:27:43.949">SSLError: HTTPSConnectionPool(host='www.metaweather.com', port=443): Max retries exceeded with url: /api/location/search/?query=taiwan (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1129)')))</status>
+<doc>請自動化 Google 搜尋自己名字 的流程</doc>
+<status status="PASS" start="2025-04-24T19:11:17.500202" elapsed="18.994525"/>
 </test>
-<status status="FAIL" starttime="20250415 10:27:42.980" endtime="20250415 10:27:43.950"/>
+<status status="PASS" start="2025-04-24T19:11:17.454422" elapsed="19.040569"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Api">Api</stat>
+<stat name="Searchname" id="s1" pass="1" fail="0" skip="0">Searchname</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20250415 10:27:43.199" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1129)'))': /api/location/search/?query=taiwan</msg>
-<msg timestamp="20250415 10:27:43.437" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1129)'))': /api/location/search/?query=taiwan</msg>
-<msg timestamp="20250415 10:27:43.888" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1129)'))': /api/location/search/?query=taiwan</msg>
 </errors>
 </robot>
