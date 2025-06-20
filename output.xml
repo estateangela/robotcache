@@ -1,67 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.1 on darwin)" generated="2025-04-24T19:11:17.453711" rpa="false" schemaversion="5">
-<suite id="s1" name="Searchname" source="/Users/angela/Downloads/robotcache/searchname.robot">
-<test id="s1-t1" name="Search Name" line="11">
-<kw name="Open Browser To Google">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-04-24T19:11:17.501130" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/'.</msg>
-<arg>${Url}</arg>
-<arg>${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-04-24T19:11:17.501034" elapsed="2.670986"/>
+<robot generator="Robot 6.0 (Python 3.9.6 on darwin)" generated="20250620 15:05:56.119" rpa="false" schemaversion="3">
+<suite id="s1" name="CurrencyInfo" source="/Users/angelashi/Documents/GitHub/robotcache/tests/public/CurrencyInfo.robot">
+<test id="s1-t1" name="取得所有 Provisioning Currencies 回應" line="10">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>bitopro</arg>
+<arg>${BASE_URL}</arg>
+<arg>headers=${HEADERS}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20250620 15:05:56.314" level="INFO">Creating Session using : alias=bitopro, url=https://api.bitopro.com/v3, headers={'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20250620 15:05:56.313" endtime="20250620 15:05:56.316"/>
 </kw>
-<status status="PASS" start="2025-04-24T19:11:17.500766" elapsed="2.671523"/>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>bitopro</arg>
+<arg>/provisioning/currencies</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20250620 15:05:56.537" level="INFO">GET Request : url=https://api.bitopro.com/v3/provisioning/currencies 
+ path_url=/v3/provisioning/currencies 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg timestamp="20250620 15:05:56.537" level="INFO">GET Response : url=https://api.bitopro.com/v3/provisioning/currencies 
+ status=200, reason=OK 
+ headers={'Date': 'Fri, 20 Jun 2025 07:05:56 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Vary': 'Origin', 'X-Request-Id': '6ee27074-448e-48c4-a4b6-36f795e0a5d9', 'X-Response-Time': '1ms'} 
+ body={"data":[{"currency":"TWD","withdrawFee":"30","minWithdraw":"100","maxWithdraw":"2000000","maxDailyWithdraw":"2000000","withdraw":true,"deposit":true,"depositConfirmation":"0"},{"currency":"ADA","withdrawFee":"1","minWithdraw":"3","maxWithdraw":"50000","maxDailyWithdraw":"200000","withdraw":true,"deposit":true,"depositConfirmation":"35"},{"currency":"APE (ERC20)","withdrawFee":"4.2","minWithdraw":"8","maxWithdraw":"10000","maxDailyWithdraw":"50000","withdraw":true,"deposit":true,"depositConfirmation":"12"},{"currency":"BCH","withdrawFee":"0.00025","minWithdraw":"0.001","maxWithdraw":"500","maxDailyWithdraw":"1000","withdraw":true,"deposit":true,"depositConfirmation":"20"},{"currency":"BITO (ERC20)","withdrawFee":"50","minWithdraw":"200","maxWithdraw":"3000000","maxDailyWithdraw":"10000000","withdraw":true,"deposit":true,"depositConfirmation":"64"},{"currency":"BNB (BEP20)","withdrawFee":"0.0002","minWithdraw":"0.1","maxWithdraw":"750","maxDailyWithdraw":"1500","withdraw":true,"deposit":true,"depositConfirmation":"1"},{"currency":"BNB","withdrawFee":"0.00016","minWithdraw":"0.1","maxWithdraw":"750","maxDailyWithdraw":"1500","withdraw":false,"deposit":false,"depositConfirmation":"1"},{"currency":"BTC","withdrawFee":"0.00004","minWithdraw":"0.0005","maxWithdraw":"50","maxDailyWithdraw":"100","withdraw":true,"deposit":true,"depositConfirmation":"3"},{"currency":"DOGE","withdrawFee":"4","minWithdraw":"5","maxWithdraw":"1000000","maxDailyWithdraw":"2000000","withdraw":true,"deposit":true,"depositConfirmation":"50"},{"currency":"EOS","withdrawFee":"0.3","minWithdraw":"1","maxWithdraw":"5500","maxDailyWithdraw":"11000","withdraw":false,"deposit":false,"depositConfirmation":"1"},{"currency":"ETH","withdrawFee":"0.0006","minWithdraw":"0.001","maxWithdraw":"500","maxDailyWithdraw":"1000","withdraw":true,"deposit":true,"depositConfirmation":"64"},{"currency":"LTC","withdrawFee":"0.0001","minWithdraw":"0.002","maxWithdraw":"2000","maxDailyWithdraw":"5000","withdraw":true,"deposit":true,"depositConfirmation":"5"},{"currency":"MATIC","withdrawFee":"0.08","minWithdraw":"10","maxWithdraw":"100000","maxDailyWithdraw":"200000","withdraw":false,"deposit":false,"depositConfirmation":"128"},{"currency":"MATIC (ERC20)","withdrawFee":"11","minWithdraw":"10","maxWithdraw":"100000","maxDailyWithdraw":"200000","withdraw":false,"deposit":false,"depositConfirmation":"64"},{"currency":"MV (Polygon)","withdrawFee":"10","minWithdraw":"1","maxWithdraw":"500000","maxDailyWithdraw":"1000000","withdraw":true,"deposit":true,"depositConfirmation":"300"},{"currency":"POL","withdrawFee":"0.1","minWithdraw":"10","maxWithdraw":"100000","maxDailyWithdraw":"200000","withdraw":true,"deposit":true,"depositConfirmation":"128"},{"currency":"POL (ERC20)","withdrawFee":"11","minWithdraw":"10","maxWithdraw":"100000","maxDailyWithdraw":"200000","withdraw":false,"deposit":false,"depositConfirmation":"64"},{"currency":"SHIB (ERC20)","withdrawFee":"250000","minWithdraw":"10000000","maxWithdraw":"5000000000","maxDailyWithdraw":"20000000000","withdraw":true,"deposit":true,"depositConfirmation":"64"},{"currency":"SOL","withdrawFee":"0.0011","minWithdraw":"0.03","maxWithdraw":"5000","maxDailyWithdraw":"10000","withdraw":true,"deposit":true,"depositConfirmation":"1"},{"currency":"TON","withdrawFee":"0.02","minWithdraw":"0.1","maxWithdraw":"20000","maxDailyWithdraw":"80000","withdraw":true,"deposit":true,"depositConfirmation":"20"},{"currency":"TON (ERC20)","withdrawFee":"1","minWithdraw":"0.1","maxWithdraw":"20000","maxDailyWithdraw":"80000","withdraw":false,"deposit":false,"depositConfirmation":"64"},{"currency":"TRX (ERC20)","withdrawFee":"75","minWithdraw":"10","maxWithdraw":"1000000","maxDailyWithdraw":"3000000","withdraw":false,"deposit":false,"depositConfirmation":"1"},{"currency":"TRX","withdrawFee":"1","minWithdraw":"10","maxWithdraw":"1000000","maxDailyWithdraw":"3000000","withdraw":true,"deposit":true,"depositConfirmation":"1"},{"currency":"USDC (Polygon)","withdrawFee":"0.05","minWithdraw":"10","maxWithdraw":"200000","maxDailyWithdraw":"1000000","withdraw":true,"deposit":true,"depositConfirmation":"300"},{"currency":"USDC (BEP20)","withdrawFee":"0.35","minWithdraw":"10","maxWithdraw":"200000","maxDailyWithdraw":"1000000","withdraw":true,"deposit":true,"depositConfirmation":"15"},{"currency":"USDC (TRC20)","withdrawFee":"1","minWithdraw":"10","maxWithdraw":"200000","maxDailyWithdraw":"1000000","withdraw":false,"deposit":false,"depositConfirmation":"1"},{"currency":"USDC (ERC20)","withdrawFee":"2.6","minWithdraw":"10","maxWithdraw":"200000","maxDailyWithdraw":"1000000","withdraw":true,"deposit":true,"depositConfirmation":"64"},{"currency":"USDT (TRC20)","withdrawFee":"1.6","minWithdraw":"10","maxWithdraw":"300000","maxDailyWithdraw":"500000","withdraw":true,"deposit":true,"depositConfirmation":"1"},{"currency":"USDT (Polygon)","withdrawFee":"0.05","minWithdraw":"10","maxWithdraw":"300000","maxDailyWithdraw":"500000","withdraw":true,"deposit":true,"depositConfirmation":"300"},{"currency":"USDT (Omni Layer)","withdrawFee":"10","minWithdraw":"10","maxWithdraw":"300000","maxDailyWithdraw":"500000","withdraw":false,"deposit":false,"depositConfirmation":"3"},{"currency":"USDT (ERC20)","withdrawFee":"2.6","minWithdraw":"10","maxWithdraw":"300000","maxDailyWithdraw":"500000","withdraw":true,"deposit":true,"depositConfirmation":"64"},{"currency":"USDT (BEP20)","withdrawFee":"0.1","minWithdraw":"10","maxWithdraw":"300000","maxDailyWithdraw":"500000","withdraw":true,"deposit":true,"depositConfirmation":"15"},{"currency":"XRP","withdrawFee":"0.2","minWithdraw":"25","maxWithdraw":"50000","maxDailyWithdraw":"100000","withdraw":true,"deposit":true,"depositConfirmation":"6"},{"currency":"YFI (ERC20)","withdrawFee":"0.0025","minWithdraw":"0.001","maxWithdraw":"1","maxDailyWithdraw":"3","withdraw":false,"deposit":false,"depositConfirmation":"12"}]} 
+ </msg>
+<msg timestamp="20250620 15:05:56.538" level="INFO">/Users/angelashi/Library/Python/3.9/lib/python/site-packages/urllib3/connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.bitopro.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20250620 15:05:56.538" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20250620 15:05:56.316" endtime="20250620 15:05:56.538"/>
 </kw>
-<kw name="Type In Name">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-04-24T19:11:20.173260" level="INFO">Typing text 'Angela Shi' into text field '//*[@id="APjFqb"]'.</msg>
-<arg>${Input}</arg>
-<arg>${Name}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-04-24T19:11:20.172931" elapsed="0.080683"/>
+<kw name="Evaluate" library="BuiltIn">
+<var>${all_data}</var>
+<arg>${response.json()}</arg>
+<arg>response=${response}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20250620 15:05:56.540" level="FAIL">Evaluating expression '{'data': [{'currency': 'TWD', 'withdrawFee': '30', 'minWithdraw': '100', 'maxWithdraw': '2000000', 'maxDailyWithdraw': '2000000', 'withdraw': True, 'deposit': True, 'depositConfirmation': '0'}, {'currency': 'ADA', 'withdrawFee': '1', 'minWithdraw': '3', 'maxWithdraw': '50000', 'maxDailyWithdraw': '200000', 'withdraw': True, 'deposit': True, 'depositConfirmation': '35'}, {'currency': 'APE (ERC20)', 'withdrawFee': '4.2', 'minWithdraw': '8', 'maxWithdraw': '10000', 'maxDailyWithdraw': '50000', 'withdraw': True, 'deposit': True, 'depositConfirmation': '12'}, {'currency': 'BCH', 'withdrawFee': '0.00025', 'minWithdraw': '0.001', 'maxWithdraw': '500', 'maxDailyWithdraw': '1000', 'withdraw': True, 'deposit': True, 'depositConfirmation': '20'}, {'currency': 'BITO (ERC20)', 'withdrawFee': '50', 'minWithdraw': '200', 'maxWithdraw': '3000000', 'maxDailyWithdraw': '10000000', 'withdraw': True, 'deposit': True, 'depositConfirmation': '64'}, {'currency': 'BNB (BEP20)', 'withdrawFee': '0.0002', 'minWithdraw': '0.1', 'maxWithdraw': '750', 'maxDailyWithdraw': '1500', 'withdraw': True, 'deposit': True, 'depositConfirmation': '1'}, {'currency': 'BNB', 'withdrawFee': '0.00016', 'minWithdraw': '0.1', 'maxWithdraw': '750', 'maxDailyWithdraw': '1500', 'withdraw': False, 'deposit': False, 'depositConfirmation': '1'}, {'currency': 'BTC', 'withdrawFee': '0.00004', 'minWithdraw': '0.0005', 'maxWithdraw': '50', 'maxDailyWithdraw': '100', 'withdraw': True, 'deposit': True, 'depositConfirmation': '3'}, {'currency': 'DOGE', 'withdrawFee': '4', 'minWithdraw': '5', 'maxWithdraw': '1000000', 'maxDailyWithdraw': '2000000', 'withdraw': True, 'deposit': True, 'depositConfirmation': '50'}, {'currency': 'EOS', 'withdrawFee': '0.3', 'minWithdraw': '1', 'maxWithdraw': '5500', 'maxDailyWithdraw': '11000', 'withdraw': False, 'deposit': False, 'depositConfirmation': '1'}, {'currency': 'ETH', 'withdrawFee': '0.0006', 'minWithdraw': '0.001', 'maxWithdraw': '500', 'maxDailyWithdraw': '1000', 'withdraw': True, 'deposit': True, 'depositConfirmation': '64'}, {'currency': 'LTC', 'withdrawFee': '0.0001', 'minWithdraw': '0.002', 'maxWithdraw': '2000', 'maxDailyWithdraw': '5000', 'withdraw': True, 'deposit': True, 'depositConfirmation': '5'}, {'currency': 'MATIC', 'withdrawFee': '0.08', 'minWithdraw': '10', 'maxWithdraw': '100000', 'maxDailyWithdraw': '200000', 'withdraw': False, 'deposit': False, 'depositConfirmation': '128'}, {'currency': 'MATIC (ERC20)', 'withdrawFee': '11', 'minWithdraw': '10', 'maxWithdraw': '100000', 'maxDailyWithdraw': '200000', 'withdraw': False, 'deposit': False, 'depositConfirmation': '64'}, {'currency': 'MV (Polygon)', 'withdrawFee': '10', 'minWithdraw': '1', 'maxWithdraw': '500000', 'maxDailyWithdraw': '1000000', 'withdraw': True, 'deposit': True, 'depositConfirmation': '300'}, {'currency': 'POL', 'withdrawFee': '0.1', 'minWithdraw': '10', 'maxWithdraw': '100000', 'maxDailyWithdraw': '200000', 'withdraw': True, 'deposit': True, 'depositConfirmation': '128'}, {'currency': 'POL (ERC20)', 'withdrawFee': '11', 'minWithdraw': '10', 'maxWithdraw': '100000', 'maxDailyWithdraw': '200000', 'withdraw': False, 'deposit': False, 'depositConfirmation': '64'}, {'currency': 'SHIB (ERC20)', 'withdrawFee': '250000', 'minWithdraw': '10000000', 'maxWithdraw': '5000000000', 'maxDailyWithdraw': '20000000000', 'withdraw': True, 'deposit': True, 'depositConfirmation': '64'}, {'currency': 'SOL', 'withdrawFee': '0.0011', 'minWithdraw': '0.03', 'maxWithdraw': '5000', 'maxDailyWithdraw': '10000', 'withdraw': True, 'deposit': True, 'depositConfirmation': '1'}, {'currency': 'TON', 'withdrawFee': '0.02', 'minWithdraw': '0.1', 'maxWithdraw': '20000', 'maxDailyWithdraw': '80000', 'withdraw': True, 'deposit': True, 'depositConfirmation': '20'}, {'currency': 'TON (ERC20)', 'withdrawFee': '1', 'minWithdraw': '0.1', 'maxWithdraw': '20000', 'maxDailyWithdraw': '80000', 'withdraw': False, 'deposit': False, 'depositConfirmation': '64'}, {'currency': 'TRX (ERC20)', 'withdrawFee': '75', 'minWithdraw': '10', 'maxWithdraw': '1000000', 'maxDailyWithdraw': '3000000', 'withdraw': False, 'deposit': False, 'depositConfirmation': '1'}, {'currency': 'TRX', 'withdrawFee': '1', 'minWithdraw': '10', 'maxWithdraw': '1000000', 'maxDailyWithdraw': '3000000', 'withdraw': True, 'deposit': True, 'depositConfirmation': '1'}, {'currency': 'USDC (Polygon)', 'withdrawFee': '0.05', 'minWithdraw': '10', 'maxWithdraw': '200000', 'maxDailyWithdraw': '1000000', 'withdraw': True, 'deposit': True, 'depositConfirmation': '300'}, {'currency': 'USDC (BEP20)', 'withdrawFee': '0.35', 'minWithdraw': '10', 'maxWithdraw': '200000', 'maxDailyWithdraw': '1000000', 'withdraw': True, 'deposit': True, 'depositConfirmation': '15'}, {'currency': 'USDC (TRC20)', 'withdrawFee': '1', 'minWithdraw': '10', 'maxWithdraw': '200000', 'maxDailyWithdraw': '1000000', 'withdraw': False, 'deposit': False, 'depositConfirmation': '1'}, {'currency': 'USDC (ERC20)', 'withdrawFee': '2.6', 'minWithdraw': '10', 'maxWithdraw': '200000', 'maxDailyWithdraw': '1000000', 'withdraw': True, 'deposit': True, 'depositConfirmation': '64'}, {'currency': 'USDT (TRC20)', 'withdrawFee': '1.6', 'minWithdraw': '10', 'maxWithdraw': '300000', 'maxDailyWithdraw': '500000', 'withdraw': True, 'deposit': True, 'depositConfirmation': '1'}, {'currency': 'USDT (Polygon)', 'withdrawFee': '0.05', 'minWithdraw': '10', 'maxWithdraw': '300000', 'maxDailyWithdraw': '500000', 'withdraw': True, 'deposit': True, 'depositConfirmation': '300'}, {'currency': 'USDT (Omni Layer)', 'withdrawFee': '10', 'minWithdraw': '10', 'maxWithdraw': '300000', 'maxDailyWithdraw': '500000', 'withdraw': False, 'deposit': False, 'depositConfirmation': '3'}, {'currency': 'USDT (ERC20)', 'withdrawFee': '2.6', 'minWithdraw': '10', 'maxWithdraw': '300000', 'maxDailyWithdraw': '500000', 'withdraw': True, 'deposit': True, 'depositConfirmation': '64'}, {'currency': 'USDT (BEP20)', 'withdrawFee': '0.1', 'minWithdraw': '10', 'maxWithdraw': '300000', 'maxDailyWithdraw': '500000', 'withdraw': True, 'deposit': True, 'depositConfirmation': '15'}, {'currency': 'XRP', 'withdrawFee': '0.2', 'minWithdraw': '25', 'maxWithdraw': '50000', 'maxDailyWithdraw': '100000', 'withdraw': True, 'deposit': True, 'depositConfirmation': '6'}, {'currency': 'YFI (ERC20)', 'withdrawFee': '0.0025', 'minWithdraw': '0.001', 'maxWithdraw': '1', 'maxDailyWithdraw': '3', 'withdraw': False, 'deposit': False, 'depositConfirmation': '12'}]}' failed: TypeError: Expression must be string, got dictionary.</msg>
+<status status="FAIL" starttime="20250620 15:05:56.538" endtime="20250620 15:05:56.543"/>
 </kw>
-<status status="PASS" start="2025-04-24T19:11:20.172648" elapsed="0.081060"/>
+<kw name="Dictionary Should Contain Key" library="Collections">
+<arg>${all_data}</arg>
+<arg>BTC</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="NOT RUN" starttime="20250620 15:05:56.543" endtime="20250620 15:05:56.543"/>
 </kw>
-<kw name="Click Search Button">
-<kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2025-04-24T19:11:20.254306" level="INFO">Sending key(s) ('RETURN',) to //*[@id="APjFqb"] element.</msg>
-<msg time="2025-04-24T19:11:20.534712" level="INFO">Pressing special key RETURN to element.</msg>
-<msg time="2025-04-24T19:11:20.534835" level="INFO">Releasing special key RETURN.</msg>
-<arg>${Input}</arg>
-<arg>RETURN</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2025-04-24T19:11:20.254057" elapsed="0.473002"/>
+<kw name="Dictionary Should Contain Key" library="Collections">
+<arg>${all_data}</arg>
+<arg>USDT</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="NOT RUN" starttime="20250620 15:05:56.544" endtime="20250620 15:05:56.545"/>
 </kw>
-<status status="PASS" start="2025-04-24T19:11:20.253870" elapsed="0.473394"/>
+<kw name="Log" library="BuiltIn">
+<arg>全部回應資料：${all_data}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20250620 15:05:56.545" endtime="20250620 15:05:56.545"/>
 </kw>
-<kw name="Check Contents">
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>${Name}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2025-04-24T19:11:20.728086" elapsed="15.752747"/>
-</kw>
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2025-04-24T19:11:36.494504" level="INFO">Current page contains text 'Angela Shi'.</msg>
-<arg>${Name}</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2025-04-24T19:11:36.480988" elapsed="0.013569"/>
-</kw>
-<status status="PASS" start="2025-04-24T19:11:20.727644" elapsed="15.766966"/>
-</kw>
-<doc>請自動化 Google 搜尋自己名字 的流程</doc>
-<status status="PASS" start="2025-04-24T19:11:17.500202" elapsed="18.994525"/>
+<doc>呼叫 GET /provisioning/currencies，並取得全部回傳內容</doc>
+<status status="FAIL" starttime="20250620 15:05:56.312" endtime="20250620 15:05:56.546">Evaluating expression '{'data': [{'currency': 'TWD', 'withdrawFee': '30', 'minWithdraw': '100', 'maxWithdraw': '2000000', 'maxDailyWithdraw': '2000000', 'withdraw': True, 'deposit': True, 'depositConfirmation': '0'}, {'currency': 'ADA', 'withdrawFee': '1', 'minWithdraw': '3', 'maxWithdraw': '50000', 'maxDailyWithdraw': '200000', 'withdraw': True, 'deposit': True, 'depositConfirmation': '35'}, {'currency': 'APE (ERC20)', 'withdrawFee': '4.2', 'minWithdraw': '8', 'maxWithdraw': '10000', 'maxDailyWithdraw': '50000', 'withdraw': True, 'deposit': True, 'depositConfirmation': '12'}, {'currency': 'BCH', 'withdrawFee': '0.00025', 'minWithdraw': '0.001', 'maxWithdraw': '500', 'maxDailyWithdraw': '1000', 'withdraw': True, 'deposit': True, 'depositConfirmation': '20'}, {'currency': 'BITO (ERC20)', 'withdrawFee': '50', 'minWithdraw': '200', 'maxWithdraw': '3000000', 'maxDailyWithdraw': '10000000', 'withdraw': True, 'deposit': True, 'depositConfirmation': '64'}, {'currency': 'BNB (BEP20)', 'withdrawFee': '0.0002', 'minWithdraw': '0.1', 'maxWithdraw': '750', 'maxDailyWithdraw': '1500', 'withdraw': True, 'deposit': True, 'depositConfirmation': '1'}, {'currency': 'BNB', 'withdrawFee': '0.00016', 'minWithdraw': '0.1', 'maxWithdraw': '750', 'maxDailyWithdraw': '1500', 'withdraw': False, 'deposit': False, 'depositConfirmation': '1'}, {'currency': 'BTC', 'withdrawFee': '0.00004', 'minWithdraw': '0.0005', 'maxWithdraw': '50', 'maxDailyWithdraw': '100', 'withdraw': True, 'deposit': True, 'depositConfirmation': '3'}, {'currency': 'DOGE', 'withdrawFee': '...
+    [ Message content over the limit has been removed. ]
+...wFee': '2.6', 'minWithdraw': '10', 'maxWithdraw': '200000', 'maxDailyWithdraw': '1000000', 'withdraw': True, 'deposit': True, 'depositConfirmation': '64'}, {'currency': 'USDT (TRC20)', 'withdrawFee': '1.6', 'minWithdraw': '10', 'maxWithdraw': '300000', 'maxDailyWithdraw': '500000', 'withdraw': True, 'deposit': True, 'depositConfirmation': '1'}, {'currency': 'USDT (Polygon)', 'withdrawFee': '0.05', 'minWithdraw': '10', 'maxWithdraw': '300000', 'maxDailyWithdraw': '500000', 'withdraw': True, 'deposit': True, 'depositConfirmation': '300'}, {'currency': 'USDT (Omni Layer)', 'withdrawFee': '10', 'minWithdraw': '10', 'maxWithdraw': '300000', 'maxDailyWithdraw': '500000', 'withdraw': False, 'deposit': False, 'depositConfirmation': '3'}, {'currency': 'USDT (ERC20)', 'withdrawFee': '2.6', 'minWithdraw': '10', 'maxWithdraw': '300000', 'maxDailyWithdraw': '500000', 'withdraw': True, 'deposit': True, 'depositConfirmation': '64'}, {'currency': 'USDT (BEP20)', 'withdrawFee': '0.1', 'minWithdraw': '10', 'maxWithdraw': '300000', 'maxDailyWithdraw': '500000', 'withdraw': True, 'deposit': True, 'depositConfirmation': '15'}, {'currency': 'XRP', 'withdrawFee': '0.2', 'minWithdraw': '25', 'maxWithdraw': '50000', 'maxDailyWithdraw': '100000', 'withdraw': True, 'deposit': True, 'depositConfirmation': '6'}, {'currency': 'YFI (ERC20)', 'withdrawFee': '0.0025', 'minWithdraw': '0.001', 'maxWithdraw': '1', 'maxDailyWithdraw': '3', 'withdraw': False, 'deposit': False, 'depositConfirmation': '12'}]}' failed: TypeError: Expression must be string, got dictionary.</status>
 </test>
-<status status="PASS" start="2025-04-24T19:11:17.454422" elapsed="19.040569"/>
+<status status="FAIL" starttime="20250620 15:05:56.122" endtime="20250620 15:05:56.548"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Searchname" id="s1" pass="1" fail="0" skip="0">Searchname</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="CurrencyInfo">CurrencyInfo</stat>
 </suite>
 </statistics>
 <errors>
