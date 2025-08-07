@@ -29,4 +29,5 @@ Open App On Ios Device
     Click Element     accessibility_id=TabBarItemTitle 
     Click Element     accessibility_id=a
     Click Element    accessibility_id=Go
+    Page Should Contain Element    accessibility_id=購物袋
 

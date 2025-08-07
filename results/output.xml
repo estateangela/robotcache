@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.5 on darwin)" generated="2025-08-07T17:13:29.123300" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.13.5 on darwin)" generated="2025-08-07T17:17:05.586588" rpa="false" schemaversion="5">
 <suite id="s1" name="Safari" source="/Users/angela/Downloads/robotcache/tests/public/safari.robot">
 <test id="s1-t1" name="成功開啟 Safari 應用程式" line="14">
 <kw name="Open App On Ios Device">
@@ -16,37 +16,43 @@ Please check https://appium.io/docs/en/2.19/guides/caps/
 | *Option*            | *Man.* | *Description*     |
 | remote_url          | Yes    | Appium server url |
 | alias               | No     | alias             |</doc>
-<status status="PASS" start="2025-08-07T17:13:29.204540" elapsed="3.595110"/>
+<status status="PASS" start="2025-08-07T17:17:05.669648" elapsed="4.625609"/>
 </kw>
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2025-08-07T17:13:32.801977" level="INFO">Clicking element 'accessibility_id=TabBarItemTitle'.</msg>
+<msg time="2025-08-07T17:17:10.297908" level="INFO">Clicking element 'accessibility_id=TabBarItemTitle'.</msg>
 <arg>accessibility_id=TabBarItemTitle</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2025-08-07T17:13:32.800781" elapsed="2.071266"/>
+<status status="PASS" start="2025-08-07T17:17:10.296123" elapsed="2.490304"/>
 </kw>
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2025-08-07T17:13:34.873366" level="INFO">Clicking element 'accessibility_id=a'.</msg>
+<msg time="2025-08-07T17:17:12.787052" level="INFO">Clicking element 'accessibility_id=a'.</msg>
 <arg>accessibility_id=a</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2025-08-07T17:13:34.872301" elapsed="1.338064"/>
+<status status="PASS" start="2025-08-07T17:17:12.786542" elapsed="1.162347"/>
 </kw>
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2025-08-07T17:13:36.211556" level="INFO">Clicking element 'accessibility_id=Go'.</msg>
+<msg time="2025-08-07T17:17:13.950442" level="INFO">Clicking element 'accessibility_id=Go'.</msg>
 <arg>accessibility_id=Go</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2025-08-07T17:13:36.210527" elapsed="1.695757"/>
+<status status="PASS" start="2025-08-07T17:17:13.949150" elapsed="1.632486"/>
 </kw>
-<status status="PASS" start="2025-08-07T17:13:29.204283" elapsed="8.702326"/>
+<kw name="Page Should Contain Element" owner="AppiumLibrary">
+<msg time="2025-08-07T17:17:15.896483" level="INFO">Current page contains element 'accessibility_id=購物袋'.</msg>
+<arg>accessibility_id=購物袋</arg>
+<doc>Verifies that current page contains `locator` element.</doc>
+<status status="PASS" start="2025-08-07T17:17:15.581854" elapsed="0.314678"/>
+</kw>
+<status status="PASS" start="2025-08-07T17:17:05.669402" elapsed="10.227201"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>iOS App 已成功啟動！</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-07T17:13:37.907090" elapsed="0.000370"/>
+<status status="PASS" start="2025-08-07T17:17:15.896735" elapsed="0.000097"/>
 </kw>
 <doc>使用 Appium 啟動一個 iOS 應用程式。</doc>
-<status status="PASS" start="2025-08-07T17:13:29.203673" elapsed="8.704165"/>
+<status status="PASS" start="2025-08-07T17:17:05.668522" elapsed="10.228406"/>
 </test>
-<status status="PASS" start="2025-08-07T17:13:29.123764" elapsed="8.785296"/>
+<status status="PASS" start="2025-08-07T17:17:05.587273" elapsed="10.310641"/>
 </suite>
 <statistics>
 <total>
