@@ -4,7 +4,7 @@ Library    AppiumLibrary
 *** Variables ***
 ${APPIUM_SERVER}            http://localhost:4723
 
-# iOS App 的相關資訊 (請依您的 App 資訊修改)
+# iOS App 的相關資訊
 ${PLATFORM_NAME}            iOS
 ${DEVICE_NAME}              iPhone SE (3rd generation)
 ${PLATFORM_VERSION}         18.3
@@ -25,4 +25,8 @@ Open App On Ios Device
     ...    deviceName=${DEVICE_NAME}
     ...    platformVersion=${PLATFORM_VERSION}
     ...    bundleId=${BUNDLE_ID}
-    ...    automationName=XCUITest   
+    ...    automationName=XCUITest
+    Click Element     accessibility_id=TabBarItemTitle 
+    Click Element     accessibility_id=a
+    Click Element    accessibility_id=Go
+
