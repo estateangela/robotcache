@@ -1,67 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.1 on darwin)" generated="2025-08-07T10:24:42.312381" rpa="false" schemaversion="5">
-<suite id="s1" name="Wiki" source="/Users/angela/Downloads/robotcache/tests/public/wiki.robot">
-<test id="s1-t1" name="Open Wikipedia" line="9">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-08-07T10:24:42.382351" level="INFO">Opening browser 'chrome' to base url 'https://zh.wikipedia.org/wiki/Wikipedia:%E9%A6%96%E9%A1%B5'.</msg>
-<arg>${Url}</arg>
-<arg>${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-08-07T10:24:42.382230" elapsed="1.969643"/>
+<robot generator="Robot 7.3.2 (Python 3.13.5 on darwin)" generated="2025-08-07T16:55:09.405799" rpa="false" schemaversion="5">
+<suite id="s1" name="Safari" source="/Users/angela/Downloads/robotcache/tests/public/safari.robot">
+<test id="s1-t1" name="成功開啟 Safari 應用程式" line="14">
+<kw name="Open App On Ios Device">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${APPIUM_SERVER}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>bundleId=${BUNDLE_ID}</arg>
+<arg>automationName=XCUITest</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.19/guides/caps/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | No     | alias             |</doc>
+<status status="PASS" start="2025-08-07T16:55:09.489077" elapsed="44.101564"/>
 </kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-08-07T10:24:44.353671" level="INFO">Clicking button '//span[@class="vector-icon mw-ui-icon-search mw-ui-icon-wikimedia-search"]'.</msg>
-<msg time="2025-08-07T10:24:44.489855" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-08-07T10:24:44.490003" level="FAIL">Button with locator '//span[@class="vector-icon mw-ui-icon-search mw-ui-icon-wikimedia-search"]' not found.</msg>
-<arg>//span[@class="vector-icon mw-ui-icon-search mw-ui-icon-wikimedia-search"]</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="FAIL" start="2025-08-07T10:24:44.352675" elapsed="0.139569">Button with locator '//span[@class="vector-icon mw-ui-icon-search mw-ui-icon-wikimedia-search"]' not found.</status>
+<status status="PASS" start="2025-08-07T16:55:09.488825" elapsed="44.102481"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<arg>//*[@id="p-search"]/div/div/div</arg>
-<arg>Selenium</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-08-07T10:24:44.492403" elapsed="0.000021"/>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>iOS App 已成功啟動！</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-07T16:55:53.594143" elapsed="0.001639"/>
 </kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<arg>//input[@name="search"]</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-08-07T10:24:44.492476" elapsed="0.000010"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>5s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-08-07T10:24:44.492538" elapsed="0.000011"/>
-</kw>
-<kw name="GET">
-<var>${response}</var>
-<arg>https://zh.wikipedia.org/wiki/Wikipedia:%E9%A6%96%E9%A1%B5</arg>
-<arg>params=query=ciao</arg>
-<arg>expected_status=200</arg>
-<status status="NOT RUN" start="2025-08-07T10:24:44.492644" elapsed="0.000013"/>
-</kw>
-<kw name="Should Be Equal As Strings" owner="BuiltIn">
-<arg>1</arg>
-<arg>${response.json()}[id]</arg>
-<doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="NOT RUN" start="2025-08-07T10:24:44.492708" elapsed="0.000009"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="NOT RUN" start="2025-08-07T10:24:44.492757" elapsed="0.000009"/>
-</kw>
-<status status="FAIL" start="2025-08-07T10:24:42.381816" elapsed="2.111051">Button with locator '//span[@class="vector-icon mw-ui-icon-search mw-ui-icon-wikimedia-search"]' not found.</status>
+<doc>使用 Appium 啟動一個 iOS 應用程式。</doc>
+<status status="PASS" start="2025-08-07T16:55:09.488066" elapsed="44.108302"/>
 </test>
-<status status="FAIL" start="2025-08-07T10:24:42.312840" elapsed="2.180233"/>
+<status status="PASS" start="2025-08-07T16:55:09.406271" elapsed="44.192757"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Wiki" id="s1" pass="0" fail="1" skip="0">Wiki</stat>
+<stat name="Safari" id="s1" pass="1" fail="0" skip="0">Safari</stat>
 </suite>
 </statistics>
 <errors>
