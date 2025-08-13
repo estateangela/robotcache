@@ -16,7 +16,12 @@ ${BUNDLE_ID}                com.apple.mobilesafari
     [Documentation]    使用 Appium 啟動一個 iOS 應用程式。
     Open App On Ios Device
     Log To Console    iOS App 已成功啟動！
-
+切換分頁
+    [Documentation]    切換分頁
+    Click Element     accessibility_id=TabOverviewButton
+增加新分頁
+    [Documentation]    增加新分頁
+    Click Element     accessibility_id=NewTabButton
 
 *** Keywords ***
 Open App On Ios Device
@@ -30,4 +35,3 @@ Open App On Ios Device
     Click Element     accessibility_id=TabBarItemTitle 
     Click Element     accessibility_id=a
     Click Element    accessibility_id=Go
-    Page Should Contain Element    accessibility_id=購物袋

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.5 on darwin)" generated="2025-08-11T15:24:18.852277" rpa="false" schemaversion="5">
-<suite id="s1" name="Calender" source="/Users/angela/Downloads/robotcache/tests/public/calender.robot">
-<test id="s1-t1" name="成功開啟 Calender 應用程式" line="14">
+<robot generator="Robot 7.3.2 (Python 3.13.5 on darwin)" generated="2025-08-13T10:27:02.591642" rpa="false" schemaversion="5">
+<suite id="s1" name="Safari" source="/Users/angela/Downloads/robotcache/tests/public/safari.robot">
+<test id="s1-t1" name="成功開啟 Safari 應用程式" line="14">
 <kw name="Open App On Ios Device">
 <kw name="Open Application" owner="AppiumLibrary">
 <arg>${APPIUM_SERVER}</arg>
@@ -16,72 +16,57 @@ Please check https://appium.io/docs/en/2.19/guides/caps/
 | *Option*            | *Man.* | *Description*     |
 | remote_url          | Yes    | Appium server url |
 | alias               | No     | alias             |</doc>
-<status status="PASS" start="2025-08-11T15:24:18.936987" elapsed="3.129824"/>
+<status status="PASS" start="2025-08-13T10:27:02.675413" elapsed="3.439412"/>
 </kw>
-<status status="PASS" start="2025-08-11T15:24:18.936738" elapsed="3.130377"/>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-08-13T10:27:06.118377" level="INFO">Clicking element 'accessibility_id=TabBarItemTitle'.</msg>
+<arg>accessibility_id=TabBarItemTitle</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-08-13T10:27:06.115697" elapsed="1.360749"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-08-13T10:27:07.477580" level="INFO">Clicking element 'accessibility_id=a'.</msg>
+<arg>accessibility_id=a</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-08-13T10:27:07.476623" elapsed="2.845461"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-08-13T10:27:10.324585" level="INFO">Clicking element 'accessibility_id=Go'.</msg>
+<arg>accessibility_id=Go</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-08-13T10:27:10.322411" elapsed="2.111515"/>
+</kw>
+<status status="PASS" start="2025-08-13T10:27:02.675154" elapsed="9.759046"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>iOS App 已成功啟動！</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-11T15:24:22.067445" elapsed="0.000223"/>
+<status status="PASS" start="2025-08-13T10:27:12.434495" elapsed="0.000326"/>
 </kw>
 <doc>使用 Appium 啟動一個 iOS 應用程式。</doc>
-<status status="PASS" start="2025-08-11T15:24:18.936114" elapsed="3.131673"/>
+<status status="PASS" start="2025-08-13T10:27:02.674535" elapsed="9.760498"/>
 </test>
-<test id="s1-t2" name="建立新行程" line="18">
-<kw name="Add New Event">
+<test id="s1-t2" name="切換分頁" line="19">
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2025-08-11T15:24:22.069115" level="INFO">Clicking element 'accessibility_id=add-plus-button'.</msg>
-<arg>accessibility_id=add-plus-button</arg>
+<msg time="2025-08-13T10:27:12.438200" level="INFO">Clicking element 'accessibility_id=TabOverviewButton'.</msg>
+<arg>accessibility_id=TabOverviewButton</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2025-08-11T15:24:22.068573" elapsed="0.697642"/>
+<status status="PASS" start="2025-08-13T10:27:12.436928" elapsed="1.817168"/>
 </kw>
-<status status="PASS" start="2025-08-11T15:24:22.068443" elapsed="0.697925"/>
-</kw>
-<kw name="Input Event Title">
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2025-08-11T15:24:22.768173" level="INFO">Clicking element 'accessibility_id=Title'.</msg>
-<arg>accessibility_id=Title</arg>
-<doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2025-08-11T15:24:22.766854" elapsed="1.259068"/>
-</kw>
-<kw name="Input Text" owner="AppiumLibrary">
-<msg time="2025-08-11T15:24:24.027599" level="INFO">Typing text 'test' into text field 'accessibility_id=Title'</msg>
-<arg>accessibility_id=Title</arg>
-<arg>test</arg>
-<doc>Types the given `text` into text field identified by `locator`.</doc>
-<status status="PASS" start="2025-08-11T15:24:24.026148" elapsed="0.743601"/>
-</kw>
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2025-08-11T15:24:24.771954" level="INFO">Clicking element 'accessibility_id=add-button'.</msg>
-<arg>accessibility_id=add-button</arg>
-<doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2025-08-11T15:24:24.770022" elapsed="1.006114"/>
-</kw>
-<status status="PASS" start="2025-08-11T15:24:22.766610" elapsed="3.009642"/>
-</kw>
-<doc>建立新行程</doc>
-<status status="PASS" start="2025-08-11T15:24:22.067941" elapsed="3.708545"/>
+<doc>切換分頁</doc>
+<status status="PASS" start="2025-08-13T10:27:12.435512" elapsed="1.818867"/>
 </test>
-<test id="s1-t3" name="Go To Home Screen" line="22">
-<kw name="Go To Home Screen">
-<kw name="Terminate Application" owner="AppiumLibrary">
-<arg>${BUNDLE_ID}</arg>
-<doc>Terminate the given app on the device</doc>
-<status status="PASS" start="2025-08-11T15:24:25.777613" elapsed="1.020685"/>
-</kw>
+<test id="s1-t3" name="增加新分頁" line="22">
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2025-08-11T15:24:26.800803" level="INFO">Clicking element 'accessibility_id=iconic-date-header-view'.</msg>
-<arg>accessibility_id=iconic-date-header-view</arg>
+<msg time="2025-08-13T10:27:14.256898" level="INFO">Clicking element 'accessibility_id=NewTabButton'.</msg>
+<arg>accessibility_id=NewTabButton</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2025-08-11T15:24:26.798676" elapsed="0.843461"/>
+<status status="PASS" start="2025-08-13T10:27:14.255536" elapsed="0.696910"/>
 </kw>
-<status status="PASS" start="2025-08-11T15:24:25.777334" elapsed="1.864924"/>
-</kw>
-<doc>前往首頁</doc>
-<status status="PASS" start="2025-08-11T15:24:25.776799" elapsed="1.865763"/>
+<doc>增加新分頁</doc>
+<status status="PASS" start="2025-08-13T10:27:14.254628" elapsed="0.698112"/>
 </test>
-<status status="PASS" start="2025-08-11T15:24:18.852962" elapsed="8.790228"/>
+<status status="PASS" start="2025-08-13T10:27:02.592181" elapsed="12.361492"/>
 </suite>
 <statistics>
 <total>
@@ -90,7 +75,7 @@ Please check https://appium.io/docs/en/2.19/guides/caps/
 <tag>
 </tag>
 <suite>
-<stat name="Calender" id="s1" pass="3" fail="0" skip="0">Calender</stat>
+<stat name="Safari" id="s1" pass="3" fail="0" skip="0">Safari</stat>
 </suite>
 </statistics>
 <errors>
