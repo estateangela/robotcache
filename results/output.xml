@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.5 on darwin)" generated="2025-08-13T10:27:02.591642" rpa="false" schemaversion="5">
-<suite id="s1" name="Safari" source="/Users/angela/Downloads/robotcache/tests/public/safari.robot">
-<test id="s1-t1" name="成功開啟 Safari 應用程式" line="14">
+<robot generator="Robot 7.3.2 (Python 3.13.5 on darwin)" generated="2025-08-14T17:12:46.009366" rpa="false" schemaversion="5">
+<suite id="s1" name="Settingtest" source="/Users/angela/Downloads/robotcache/tests/public/settingtest.robot">
+<test id="s1-t1" name="成功開啟設定" line="14">
 <kw name="Open App On Ios Device">
 <kw name="Open Application" owner="AppiumLibrary">
 <arg>${APPIUM_SERVER}</arg>
@@ -16,66 +16,56 @@ Please check https://appium.io/docs/en/2.19/guides/caps/
 | *Option*            | *Man.* | *Description*     |
 | remote_url          | Yes    | Appium server url |
 | alias               | No     | alias             |</doc>
-<status status="PASS" start="2025-08-13T10:27:02.675413" elapsed="3.439412"/>
+<status status="PASS" start="2025-08-14T17:12:46.088792" elapsed="3.538851"/>
 </kw>
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2025-08-13T10:27:06.118377" level="INFO">Clicking element 'accessibility_id=TabBarItemTitle'.</msg>
-<arg>accessibility_id=TabBarItemTitle</arg>
-<doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2025-08-13T10:27:06.115697" elapsed="1.360749"/>
-</kw>
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2025-08-13T10:27:07.477580" level="INFO">Clicking element 'accessibility_id=a'.</msg>
-<arg>accessibility_id=a</arg>
-<doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2025-08-13T10:27:07.476623" elapsed="2.845461"/>
-</kw>
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2025-08-13T10:27:10.324585" level="INFO">Clicking element 'accessibility_id=Go'.</msg>
-<arg>accessibility_id=Go</arg>
-<doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2025-08-13T10:27:10.322411" elapsed="2.111515"/>
-</kw>
-<status status="PASS" start="2025-08-13T10:27:02.675154" elapsed="9.759046"/>
+<status status="PASS" start="2025-08-14T17:12:46.088542" elapsed="3.539497"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>iOS App 已成功啟動！</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-08-13T10:27:12.434495" elapsed="0.000326"/>
+<status status="PASS" start="2025-08-14T17:12:49.628417" elapsed="0.000492"/>
 </kw>
 <doc>使用 Appium 啟動一個 iOS 應用程式。</doc>
-<status status="PASS" start="2025-08-13T10:27:02.674535" elapsed="9.760498"/>
+<status status="PASS" start="2025-08-14T17:12:46.087968" elapsed="3.541163"/>
 </test>
-<test id="s1-t2" name="切換分頁" line="19">
+<test id="s1-t2" name="點擊一般設定" line="18">
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2025-08-13T10:27:12.438200" level="INFO">Clicking element 'accessibility_id=TabOverviewButton'.</msg>
-<arg>accessibility_id=TabOverviewButton</arg>
+<msg time="2025-08-14T17:12:49.633112" level="INFO">Clicking element 'accessibility_id=com.apple.settings.general'.</msg>
+<arg>accessibility_id=com.apple.settings.general</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2025-08-13T10:27:12.436928" elapsed="1.817168"/>
+<status status="PASS" start="2025-08-14T17:12:49.631877" elapsed="1.114109"/>
 </kw>
-<doc>切換分頁</doc>
-<status status="PASS" start="2025-08-13T10:27:12.435512" elapsed="1.818867"/>
+<doc>點擊一般設定</doc>
+<status status="PASS" start="2025-08-14T17:12:49.629811" elapsed="1.116645"/>
 </test>
-<test id="s1-t3" name="增加新分頁" line="22">
+<test id="s1-t3" name="返回" line="21">
+<kw name="Go Back" owner="AppiumLibrary">
+<doc>Goes one step backward in the browser history.</doc>
+<status status="PASS" start="2025-08-14T17:12:50.747967" elapsed="1.226881"/>
+</kw>
+<doc>返回</doc>
+<status status="PASS" start="2025-08-14T17:12:50.746820" elapsed="1.228410"/>
+</test>
+<test id="s1-t4" name="點擊輔助使用" line="24">
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2025-08-13T10:27:14.256898" level="INFO">Clicking element 'accessibility_id=NewTabButton'.</msg>
-<arg>accessibility_id=NewTabButton</arg>
+<msg time="2025-08-14T17:12:51.978459" level="INFO">Clicking element 'accessibility_id=com.apple.settings.accessibility'.</msg>
+<arg>accessibility_id=com.apple.settings.accessibility</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2025-08-13T10:27:14.255536" elapsed="0.696910"/>
+<status status="PASS" start="2025-08-14T17:12:51.977025" elapsed="1.147391"/>
 </kw>
-<doc>增加新分頁</doc>
-<status status="PASS" start="2025-08-13T10:27:14.254628" elapsed="0.698112"/>
+<doc>點擊輔助使用</doc>
+<status status="PASS" start="2025-08-14T17:12:51.975605" elapsed="1.149157"/>
 </test>
-<status status="PASS" start="2025-08-13T10:27:02.592181" elapsed="12.361492"/>
+<status status="PASS" start="2025-08-14T17:12:46.010322" elapsed="7.115071"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="0" skip="0">All Tests</stat>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Safari" id="s1" pass="3" fail="0" skip="0">Safari</stat>
+<stat name="Settingtest" id="s1" pass="4" fail="0" skip="0">Settingtest</stat>
 </suite>
 </statistics>
 <errors>
