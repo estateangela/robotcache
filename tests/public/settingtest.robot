@@ -21,6 +21,7 @@ ${BUNDLE_ID}                com.apple.Preferences
 返回
     [Documentation]    返回
     Go Back
+    Go Back
 點擊輔助使用
     [Documentation]    點擊輔助使用
     Click Element    accessibility_id=com.apple.settings.accessibility
