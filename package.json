@@ -115,7 +115,7 @@
     "path-exists": "^4.0.0",
     "path-key": "^3.1.1",
     "path-scurry": "^1.11.1",
-    "pathval": "^2.0.0",
+    "pathval": "^2.0.1",
     "picomatch": "^2.3.1",
     "qs": "^6.14.0",
     "randombytes": "^2.1.0",
