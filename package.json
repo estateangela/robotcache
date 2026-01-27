@@ -54,7 +54,7 @@
     "deep-eql": "^5.0.2",
     "delayed-stream": "^1.0.0",
     "dezalgo": "^1.0.4",
-    "diff": "^5.2.0",
+    "diff": "^5.2.2",
     "dunder-proto": "^1.0.1",
     "eastasianwidth": "^0.2.0",
     "emoji-regex": "^9.2.2",
